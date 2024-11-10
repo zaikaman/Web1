@@ -100,6 +100,7 @@
 /*  */
 nav.navbar {
   padding: initial;
+  z-index: 1000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3519,4 +3520,116 @@ select.form-control {
 
 .breadcrumb-item.active {
   color: #777777;
+}
+
+.select-swatch {
+  margin: 20px 0;
+}
+
+.swatch-title {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.select-swap {
+  display: flex;
+  gap: 10px;
+}
+
+.swatch-element {
+  border: 1px solid #ddd;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.swatch-element input {
+  display: none;
+}
+
+.swatch-element label {
+  margin: 0;
+  cursor: pointer;
+}
+
+.swatch-element:hover,
+.swatch-element input:checked + label {
+  border-color: #000;
+}
+
+.discount-btn {
+  width: 100%;
+  padding: 10px;
+  background: #4267b2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.uk-offcanvas-bar {
+  z-index: 1000;
+}
+
+.cart-view {
+  padding: 15px;
+}
+
+.cart-view table {
+  width: 100%;
+}
+
+.cart-view .img {
+  width: 80px;
+  padding-right: 10px;
+}
+
+.cart-view .variant {
+  display: block;
+  font-size: 13px;
+  color: #666;
+}
+
+.cart-view .pro-quantity-view,
+.cart-view .pro-price-view {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.cart-view .line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  margin: 15px 0;
+}
+
+.table-total {
+  margin-top: 15px;
+}
+
+.table-total td {
+  padding: 5px 0;
+}
+
+.button.dark {
+  background: #272727;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.uk-offcanvas {
+  z-index: 9999 !important;
+}
+
+.uk-offcanvas-bar {
+  z-index: 10000 !important;
+}
+
+.uk-offcanvas-close {
+  z-index: 10001 !important;
 }

@@ -405,6 +405,11 @@
       </div>
     </div>
   </footer>
+  <!-- Thêm UIkit JS -->
+  <script src="plugins/uikit/uikit.min.js"></script>
+  <script src="plugins/uikit/uikit-icons.min.js"></script>
+
+  <!-- Các script khác -->
   <script async defer crossorigin="anonymous" src="plugins/sdk.js"></script>
   <script src="plugins/jquery-3.4.1/jquery-3.4.1.min.js"></script>
   <script src="plugins/bootstrap/popper.min.js"></script>
@@ -412,6 +417,28 @@
   <script src="plugins/owl.carousel/owl.carousel.min.js"></script>
   <script src="js/products.js"></script>
   <script src="js/product-list.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lấy nút giỏ hàng
+      const cartButton = document.querySelector('a[uk-toggle="target: #offcanvas-flip2"]');
+      const cartOffcanvas = document.getElementById('offcanvas-flip2');
+      
+      if (cartButton && cartOffcanvas) {
+        cartButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          UIkit.offcanvas(cartOffcanvas).show();
+        });
+      }
+      
+      // Xử lý nút đóng giỏ hàng
+      const closeButton = cartOffcanvas.querySelector('.uk-offcanvas-close');
+      if (closeButton) {
+        closeButton.addEventListener('click', function() {
+          UIkit.offcanvas(cartOffcanvas).hide();
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
