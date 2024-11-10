@@ -329,7 +329,7 @@ img {
   font-weight: bold;
   font-size: 13px;
 }
-.desk-menu > ul > li > a:before {
+/* .desk-menu > ul > li > a:before {
   position: absolute;
   content: "";
   bottom: 0;
@@ -344,8 +344,8 @@ img {
 .desk-menu > ul > li > a:hover:before,
 .desk-menu > ul > li.active > a:before {
   opacity: 1;
-  transform: scale(1, 1);
-}
+  transform: scale(1, 1); */
+/* } */
 .icon-cc {
   float: left;
 }
