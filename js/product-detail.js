@@ -64,12 +64,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function addToCart() {
-  const quantity = document.getElementById('quantity').value;
+  const quantity = parseInt(document.getElementById('quantity').value);
   const color = document.getElementById('product-colors').value;
   const size = document.getElementById('product-sizes').value;
   
-  // TODO: Thêm logic xử lý giỏ hàng
-  alert('Đã thêm sản phẩm vào giỏ hàng!');
+  const product = {
+    id: currentProduct.id,
+    name: currentProduct.name,
+    image: currentProduct.images[0],
+    price: currentProduct.price,
+    color: color,
+    size: size,
+    quantity: quantity
+  };
+  
+  window.addToCart(product);
+  UIkit.offcanvas(document.getElementById('offcanvas-flip2')).show();
 }
 
 document.querySelector('.btn-buy-now').addEventListener('click', function() {
