@@ -3633,3 +3633,111 @@ select.form-control {
 .uk-offcanvas-close {
   z-index: 10001 !important;
 }
+
+.checkout-form {
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.checkout-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.order-summary {
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.order-summary h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.order-items .item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.item-details {
+  margin-left: 15px;
+}
+
+.item-details h6 {
+  margin-bottom: 5px;
+}
+
+.item-details p {
+  margin-bottom: 3px;
+  color: #666;
+}
+
+.item-details .price {
+  color: #272727;
+  font-weight: bold;
+}
+
+.summary-details {
+  margin: 20px 0;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-line.total {
+  font-weight: bold;
+  font-size: 18px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.checkout-button {
+  margin-top: 20px;
+}
+
+.success-checkout {
+  text-align: center;
+  padding: 50px 20px;
+  background: #fff;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+
+.success-icon {
+  font-size: 80px;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.success-checkout h2 {
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+.order-info {
+  margin: 30px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.order-info h4 {
+  color: #272727;
+  margin-bottom: 15px;
+}
+
+.success-buttons {
+  margin-top: 30px;
+}
+
+.success-buttons .button {
+  margin: 0 10px;
+}
