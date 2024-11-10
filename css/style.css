@@ -3150,3 +3150,373 @@ div.item:hover {
 .page-numbers a:hover {
   background: #f5f5f5;
 }
+
+.select-swatch {
+  margin: 20px 0;
+}
+
+.product-quantity {
+  margin-bottom: 15px;
+}
+
+.quantity-label {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.quantity-selector {
+  width: 80px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.product-action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.add-to-cart, .buy-now {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  background-color: #305DFF;
+  color: white;
+}
+
+.buy-now {
+  background-color: #FF3945;
+  color: white;
+}
+
+/* Styles cho phần chi tiết sản phẩm */
+.product-content-desc {
+  padding: 20px;
+}
+
+.product-price {
+  font-size: 24px;
+  color: #000;
+  margin: 10px 0;
+}
+
+.product-sku {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Màu sắc */
+.color-select {
+  margin: 20px 0;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.color-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.color-circle.active {
+  border-color: #000;
+}
+
+.color-circle.purple {
+  background: purple;
+}
+
+.color-circle.blue {
+  background: blue;
+}
+
+/* Size */
+.size-options {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.size-btn {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.size-btn.active {
+  background: #000;
+  color: white;
+}
+
+/* Số lượng và buttons */
+.quantity-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.quantity-area button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: white;
+}
+
+.quantity-area input {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #ddd;
+  margin: 0 5px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.them-vao-btn {
+  padding: 10px 30px;
+  background: #000;
+  color: white;
+  border: none;
+}
+
+.mua-ngay-btn {
+  padding: 10px 30px;
+  background: #ff0000;
+  color: white;
+  border: none;
+}
+
+.discount-btn {
+  width: 100%;
+  padding: 15px;
+  background: #4267b2;
+  color: white;
+  border: none;
+  margin: 20px 0;
+}
+
+/* Mô tả */
+.description {
+  margin-top: 30px;
+}
+
+.description h4 {
+  margin-bottom: 15px;
+}
+
+.color-select, .size-select {
+  margin: 15px 0;
+}
+
+.color-select span, .size-select span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#product-colors, #product-sizes {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.page-btn {
+  padding: 8px 15px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.page-btn.active {
+  background-color: #272727;
+  color: white;
+  border-color: #272727;
+}
+
+.filter-sidebar {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 20px;
+}
+
+.filter-group {
+  margin-bottom: 25px;
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.filter-group h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #272727;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.form-control {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #272727;
+  box-shadow: none;
+  outline: none;
+}
+
+select.form-control {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23272727' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 8px 10px;
+  padding-right: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#search-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+#loading-indicator {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.error-message {
+  text-align: center;
+  padding: 20px;
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
+
+.custom-select {
+  font-size: 14px;
+  color: #333;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  width: 100%;
+  cursor: pointer;
+}
+
+.custom-select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.select-option {
+  padding: 8px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+
+.select-option:hover {
+  background-color: #f8f9fa;
+}
+
+.form-control {
+  height: auto !important;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.wpo-search-inner {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* CSS cho breadcrumb */
+.bread-crumb {
+  padding: 14px 0;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 30px;
+}
+
+.breadcrumb {
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  color: #777777;
+  padding: 0 10px;
+}
+
+.breadcrumb-item a {
+  color: #272727;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: #c89979;
+}
+
+.breadcrumb-item.active {
+  color: #777777;
+}
