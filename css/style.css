@@ -121,7 +121,8 @@ nav.navbar {
   border: initial;
   border-bottom: 1px dotted #ddd;
   padding: initial;
-  padding: 10px 0px;
+  padding: 10px 10px;
+  position: relative;
 }
 .navbar-light .navbar-nav .nav-link::after {
   display: none;
@@ -284,6 +285,7 @@ img {
   color: #272727;
 }
 .sub_menu {
+  width: 100%;
   background: #fff;
   position: absolute;
   z-index: 999;
@@ -291,6 +293,9 @@ img {
   transform: rotate3d(1, 0, 0, -90deg);
   transform-origin: 0 0 0;
   transition: all 0.5s ease;
+}
+.lisanpham {
+  position: relative;
 }
 .desk-menu ul li .sub_menu li {
   position: relative;
@@ -519,6 +524,8 @@ div.pro-text {
 .product-block .product-img {
   text-align: center;
   position: relative;
+  overflow: hidden;
+  object-fit: cover;
   overflow: hidden;
 }
 .product-block .product-img a img:first-child {

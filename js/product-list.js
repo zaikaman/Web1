@@ -79,7 +79,7 @@ function displayProducts(page) {
     container.innerHTML += `
       <div class="col-md-3 col-sm-6 col-xs-6 col-6">
         <div class="product-block">
-          <div class="product-img fade-box">
+          <div class="product-img fade-box ">
             <a href="detailproduct.html?id=${product.id}" title="${product.name}" class="img-resize">
               <img src="${product.images[0]}" alt="${product.name}" class="lazyloaded">
               <img src="${product.images[1]}" alt="${product.name}" class="lazyloaded">
