@@ -7,23 +7,13 @@
 
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <link rel="stylesheet" href="plugins/fontawesome/all.css">
 
-  <link href="plugins/webfonts/font.css"
-    rel="stylesheet">
-
-  <!-- Non-critical CSS -->
-  <link rel="stylesheet" href="plugins/animate/animate.min.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="plugins/uikit/uikit.min.css" media="print" onload="this.media='all'"/>
+  <link rel="stylesheet" href="plugins/uikit/uikit.min.css">
 
   <title>Giới thiệu</title>
-
-  <link rel="preconnect" href="https://www.facebook.com">
-  <link rel="preconnect" href="https://connect.facebook.net">
 
 </head>
 
@@ -471,36 +461,10 @@
       </div>
     </div>
   </footer>
-  <script async defer crossorigin="anonymous" src="plugins/sdk.js"></script>
   <script src="plugins/jquery-3.4.1/jquery-3.4.1.min.js"></script>
-  <script src="plugins/bootstrap/popper.min.js"></script>
   <script src="plugins/bootstrap/bootstrap.min.js"></script>
-  <script src="plugins/owl.carousel/owl.carousel.min.js"></script>
   <script src="plugins/uikit/uikit.min.js"></script>
-  <script src="plugins/uikit/uikit-icons.min.js"></script>
   <script src="js/cart.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Lấy nút giỏ hàng
-      const cartButton = document.querySelector('a[uk-toggle="target: #offcanvas-flip2"]');
-      const cartOffcanvas = document.getElementById('offcanvas-flip2');
-      
-      if (cartButton && cartOffcanvas) {
-        cartButton.addEventListener('click', function(e) {
-          e.preventDefault();
-          UIkit.offcanvas(cartOffcanvas).show();
-        });
-      }
-      
-      // Xử lý nút đóng giỏ hàng
-      const closeButton = cartOffcanvas.querySelector('.uk-offcanvas-close');
-      if (closeButton) {
-        closeButton.addEventListener('click', function() {
-          UIkit.offcanvas(cartOffcanvas).hide();
-        });
-      }
-    });
-  </script>
 </body>
 
 </html>
