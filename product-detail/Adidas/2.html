@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Adidas NMD R1</title>
+  
+  <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../plugins/animate/animate.min.css">
+  <link rel="stylesheet" href="../../plugins/fontawesome/all.css">
+  <link href="../../plugins/webfonts/font.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../plugins/owl.carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="../../plugins/uikit/uikit.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+</head>
+
+<body>
+   <!-- Header -->
+   <div class="header">
+    <a style="color: #ffffff;text-decoration: none;" href="../../index.html">MIỄN PHÍ VẬN CHUYỂN VỚI ĐƠN HÀNG NỘI THÀNH > 300K
+      - ĐỔI TRẢ TRONG 30 NGÀY - ĐẢM BẢO CHẤT LƯỢNG</a>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../../index.html">
+        <img src="../../images/logo.png" class="logo-top" alt="">
+      </a>
+      <div class="desk-menu collapse navbar-collapse justify-content-md-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="../../index.html">TRANG CHỦ</a>
+          </li>
+          <li class="nav-item lisanpham">
+            <a class="nav-link" href="../../product.html">THƯƠNG HIỆU
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="sub_menu">
+              <li class=""> 
+                <a href="../../nike-product.html" title="Nike"> 
+                  Nike
+                </a>
+              </li>
+              <li class="">
+                <a href="../../adidas-product.html" title="Adidas"> 
+                  Adidas 
+                </a>
+              </li>
+              <li class="">
+                <a href="../../converse-product.html" title="Converse"> 
+                  Converse
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../introduce.html">GIỚI THIỆU</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../blog.html">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../contact.html">LIÊN HỆ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="icon-ol">
+        <a style="color: #272727" href="">
+          <i class="fas fa-user-alt"></i>
+        </a>
+        <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <button class="navbar-toggler" type="button" uk-toggle="target: #offcanvas-flip1" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-shop">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../index.html">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="../../adidas-product.html">Adidas</a></li>
+            <li class="breadcrumb-item active">Adidas NMD R1</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Detail -->
+  <div id="product" class="productDetail-page">
+    <div class="container">
+      <div class="row product-detail-wrapper">
+        <div class="col-md-6">
+          <div class="product-gallery">
+            <div class="product-gallery-thumbs">
+              <div class="product-gallery-thumb active">
+                <img src="../../images/Adidas/2.jpg" alt="Adidas NMD R1">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="product-content-desc" id="detail-product">
+            <h1 id="product-name">Adidas NMD R1</h1>
+            
+            <div class="product-price" id="price-preview">
+              <span class="current-price">3,800,000₫</span>
+            </div>
+
+            <div class="product-sku">
+              <p>Mã sản phẩm: <span>A-0002-1</span></p>
+            </div>
+
+            <!-- Phần chọn màu -->
+            <div class="color-select">
+              <span>Màu sắc:</span>
+              <select id="product-colors">
+                <option value="Xám">Xám</option>
+                <option value="Đen">Đen</option>
+              </select>
+            </div>
+
+            <!-- Phần chọn size -->
+            <div class="size-select">
+              <span>Kích thước:</span>
+              <select id="product-sizes">
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+              </select>
+            </div>
+
+            <!-- Số lượng và buttons -->
+            <div class="quantity-buttons">
+              <div class="quantity-area">
+                <button class="minus-btn" onclick="decreaseQty()">-</button>
+                <input type="text" value="1" id="quantity">
+                <button class="plus-btn" onclick="increaseQty()">+</button>
+              </div>
+              
+              <div class="action-buttons">
+                <button class="them-vao-btn" onclick="addToCart(22)">THÊM VÀO</button>
+                <button class="mua-ngay-btn">MUA NGAY</button>
+              </div>
+            </div>
+
+            <!-- Nút giảm giá -->
+            <button class="discount-btn">CLICK NHẬN MÃ GIẢM GIÁ NGAY !</button>
+
+            <!-- Mô tả -->
+            <div class="description">
+              <h4>Mô tả</h4>
+              <p>Adidas NMD R1 - Phong cách đường phố hiện đại với công nghệ Boost.</p>
+              <ul>
+                <li>Upper vải dệt kim thoáng khí</li>
+                <li>Đệm Boost nhẹ và đàn hồi</li>
+                <li>Đế ngoài cao su bền bỉ</li>
+                <li>Thiết kế minimalist hiện đại</li>
+                <li>Phù hợp phong cách casual</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="offcanvas-flip1" uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar" style="background: white; width: 100%;">
+      <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
+      <h3 style="font-size: 14px; color: #272727; text-transform: uppercase; margin: 3px 0 30px 0; font-weight: 500; letter-spacing: 2px;">MENU</h3>
+      <div class="justify-content-md-center">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">TRANG CHỦ</a>
+          </li>
+          <!-- Thêm các menu item khác tương tự -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tìm kiếm -->
+  <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
+      <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
+      <div class="search-box wpo-wrapper-search">
+        <form action="search" class="searchform searchform-categoris ultimate-search">
+          <div class="wpo-search-inner">
+            <input type="text" name="q" maxlength="40" placeholder="Tìm kiếm..." class="searchinput input-search search-input">
+          </div>
+          <button type="submit" class="btn-search btn" id="search-header-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Giỏ hàng -->
+  <div id="offcanvas-flip2" uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
+      <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
+      <h3 style="font-size: 14px; color: #272727; text-transform: uppercase; margin: 3px 0 30px 0; font-weight: 500; letter-spacing: 2px;">Giỏ hàng</h3>
+      <div class="cart-view clearfix">
+        <table id="cart-view">
+          <tbody>
+            <tr class="item_1">
+              <td class="img">
+                <a href="" title="Nike Air Max 90 Essential 'Grape'">
+                  <img src="images/shoes/1.jpg" alt="Nike Air Max 90 Essential Grape">
+                </a>
+              </td>
+              <td>
+                <a class="pro-title-view" style="color: #272727" href="">Nike Air Max 90 Essential "Grape"</a>
+                <span class="variant">Tím / 36</span>
+                <span class="pro-quantity-view">1</span>
+                <span class="pro-price-view">4,800,000₫</span>
+                <span class="remove_link remove-cart">
+                  <a href=""><i style="color: #272727;" class="fas fa-times"></i></a>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- <span class="line"></span> -->
+        <table class="table-total">
+          <tbody>
+            <tr>
+              <td class="text-left">TỔNG TIỀN:</td>
+              <td class="text-right" id="total-view-cart">4,800,000₫</td>
+            </tr>
+            <tr>
+              <td class="distance-td">
+                <a href="../../cart.html" class="linktocart button dark">Xem giỏ hàng</a>
+              </td>
+              <td>
+                <a href="../../checkout.html" class="linktocheckout button dark">Thanh toán</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>  
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="footer-col">
+            <h4 class="footer-title">Giới thiệu</h4>
+            <div class="footer-content">
+              <p>Chuyên cung cấp các sản phẩm giày thể thao chính hãng...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-col">
+            <h4 class="footer-title">Thông tin liên hệ</h4>
+            <div class="footer-content">
+              <p>Địa chỉ: 123 ABC, Quận 1, TP.HCM</p>
+              <p>Điện thoại: 0123456789</p>
+              <p>Email: support@shoes.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-col">
+            <h4 class="footer-title">Hỗ trợ</h4>
+            <div class="footer-content">
+              <ul>
+                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                <li><a href="#">Chính sách đổi trả</a></li>
+                <li><a href="#">Chính sách bảo hành</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-col">
+            <h4 class="footer-title">Theo dõi chúng tôi</h4>
+            <div class="footer-content">
+              <ul class="social-links">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../plugins/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+  <script src="../../plugins/bootstrap/popper.min.js"></script>
+  <script src="../../plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="../../plugins/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../../plugins/uikit/uikit.min.js"></script>
+  <script src="../../js/cart.js"></script>
+  
+  <script>
+    // Script xử lý gallery ảnh
+    document.querySelectorAll('.product-gallery-thumb').forEach(thumb => {
+      thumb.addEventListener('click', function() {
+        const featured = document.querySelector('.product-gallery-featured img');
+        featured.src = this.querySelector('img').src;
+        
+        document.querySelector('.product-gallery-thumb.active').classList.remove('active');
+        this.classList.add('active');
+      });
+    });
+
+    // Script xử lý số lượng
+    function decreaseQty() {
+      const qty = document.getElementById('quantity');
+      if (qty.value > 1) qty.value--;
+    }
+
+    function increaseQty() {
+      const qty = document.getElementById('quantity');
+      qty.value++;
+    }
+  </script>
+</body>
+</html>
