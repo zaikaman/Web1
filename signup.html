@@ -261,42 +261,45 @@
                     <h1>Tạo tài khoản</h1>
                 </div>
             </div>
-            <div class="signin-right ">
-                <form action="">
-                    <div class="firstname form-control1 ">
-                        <input type="text"   id="firstname" placeholder="Họ">
+            <div class="signin-right">
+                <form onsubmit="handleSignup(event)">
+                    <div class="firstname form-control1">
+                        <input type="text" id="firstname" placeholder="Họ" required>
                     </div>
                     <div class="lastname form-control1">
-                        <input type="text" id="lastname" placeholder="Tên">
+                        <input type="text" id="lastname" placeholder="Tên" required>
                     </div>
                     <div class="sex form-control1">
-                       <div class="female">
-                         
-                          <input type="radio" id="female" checked  name="sex">
-                          <label for="female">Nữ</label>
-                       </div>
-                       <div class="male">
-                        
-                        <input type="radio" id="male"  name="sex">
-                        <label for="male" >Nam</label>
-                     </div>
+                        <div class="female">
+                            <input type="radio" id="female" checked name="sex">
+                            <label for="female">Nữ</label>
+                        </div>
+                        <div class="male">
+                            <input type="radio" id="male" name="sex">
+                            <label for="male">Nam</label>
+                        </div>
                     </div>
                     <div class="birthday form-control1">
-                        <input type="text" id="birthday" placeholder="mm/dd/yyyy">
+                        <input type="text" id="birthday" placeholder="mm/dd/yyyy" required>
                     </div>
                     <div class="email form-control1">
-                        <input type="email"  id="email" placeholder="Email">
+                        <input type="email" id="signup-email" placeholder="Email" required>
                     </div>
                     <div class="password form-control1">
-                        <input type="password"  id="password" placeholder="Password">
+                        <input type="password" id="signup-password" placeholder="Password" required>
+                    </div>
+                    <div class="password form-control1">
+                        <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu" required>
                     </div>
                     <div class="recaptcha form-control1">This site is protected by reCAPTCHA and the Google <a href="">Privacy Policy</a> and <a href="">Terms of Service</a> apply.</div>
                     <div class="submit">
-                      <p>Đăng kí</p>
-                       
-                    </div>
-                    <div class="backto">
-                      <a href=""><i class="fa fa-long-arrow-alt-left"></i> Quay lại trang chủ</a>
+                        <button type="submit" class="btn">ĐĂNG KÝ</button>
+                        <div class="forgetpassword">
+                            <a href="signin.html">Đã có tài khoản? Đăng nhập ngay</a>
+                        </div>
+                        <div class="backto">
+                            <a href="index.html"><i class="fa fa-long-arrow-alt-left"></i> Quay lại trang chủ</a>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -459,6 +462,7 @@
   <script src="plugins/uikit/uikit.min.js"></script>
   <script src="plugins/uikit/uikit-icons.min.js"></script>
   <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
 </body>
 
 </html>
