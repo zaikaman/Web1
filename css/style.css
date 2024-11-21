@@ -3818,3 +3818,41 @@ select.form-control {
   background: #404040;
   border-color: #404040;
 }
+
+/* Thêm vào cuối file style.css */
+
+/* Hiệu ứng slide in khi scroll */
+.slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Các biến thể của hiệu ứng */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-in-left.active,
+.slide-in-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Delay cho các phần tử liên tiếp */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }

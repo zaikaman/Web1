@@ -110,5 +110,26 @@ $(document).ready(function () {
         $('.registratior_custom').fadeOut(0);
     });
 
+    // Xử lý hiệu ứng slide in khi scroll
+    function checkSlide() {
+        const elements = document.querySelectorAll('.slide-in, .slide-in-left, .slide-in-right');
+        
+        elements.forEach(element => {
+            // Vị trí của phần tử so với viewport
+            const slideInAt = (window.scrollY + window.innerHeight) - element.offsetHeight / 2;
+            const elementBottom = element.offsetTop + element.offsetHeight;
+            const isHalfShown = slideInAt > element.offsetTop;
+            const isNotScrolledPast = window.scrollY < elementBottom;
+            
+            if (isHalfShown && isNotScrolledPast) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    // Thêm event listener cho scroll
+    window.addEventListener('scroll', checkSlide);
+    // Chạy một lần khi trang load để kiểm tra các phần tử đã hiển thị
+    window.addEventListener('load', checkSlide);
 
 });
