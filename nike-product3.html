@@ -33,7 +33,6 @@
 
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-
     <div class="container">
       <a class="navbar-brand" href="index.html">
         <img src="images/logo.png" class="logo-top" alt="">
@@ -98,17 +97,65 @@
         </div>
       </div>
 
+      <div id="offcanvas-flip2" uk-offcanvas="flip: true; overlay: true">
+        <div class="uk-offcanvas-bar" style="background: white;
+            width: 350px;">
+
+          <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
+
+          <h3 style="font-size: 14px;
+                color: #272727;
+                text-transform: uppercase;
+                margin: 3px 0 30px 0;
+                font-weight: 500; letter-spacing: 2px;">Giỏ hàng</h3>
+          <div class="site-nav-container-last" style="color:#272727">
+            <div class="cart-view clearfix">
+              <table id="cart-view">
+                <tbody>
+                  <tr class="item_1">
+                    <td class="img"><a href="./product-detail/Nike/1.html" title="Nike Air Max 90"><img
+                          src="images/shoes/1.jpg" alt="Nike Air Max 90"></a></td>
+                    <td>
+                      <a class="pro-title-view" style="color: #272727" href="./product-detail/Nike/1.html"
+                        title="Nike Air Max 90">Nike Air Max 90</a>
+                      <span class="variant">Đen / 42</span>
+                      <span class="pro-quantity-view">1</span>
+                      <span class="pro-price-view">3,600,000₫</span>
+                      <span class="remove_link remove-cart"><a href=""><i style="color: #272727;"
+                            class="fas fa-times"></i></a></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table-total">
+                <tbody>
+                  <tr>
+                    <td class="text-left">TỔNG TIỀN:</td>
+                    <td class="text-right" id="total-view-cart">3,600,000₫</td>
+                  </tr>
+                  <tr>
+                    <td class="distance-td"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td><a href="checkout.html" class="linktocheckout button dark">Thanh toán</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="icon-ol">
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip">
           <i class="fas fa-search" style="color: black"></i>
         </a>
-        
-        <a style="color: #272727" href="#" class="user-icon">
-          <i class="fas fa-user-alt"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="signin.html">Đăng nhập</a>
-          <a href="signup.html">Đăng ký</a>
+        <div class="user-dropdown">
+          <a style="color: #272727" href="#">
+            <i class="fas fa-user-alt"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="signin.html">Đăng nhập</a>
+            <a href="signup.html">Đăng ký</a>
+          </div>
         </div>
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
           <i class="fas fa-shopping-cart"></i>
@@ -120,6 +167,13 @@
       </div>
     </div>
   </nav>
+
+  <!--Banner-->
+  <div>
+    <div>
+      <img src="images/collection_banner.jpg" alt="Products">
+    </div>
+  </div>
 
   <!--List Product-->
   <div class="container">
@@ -262,7 +316,7 @@
             <button id="prev-page" class="page-btn">←</button>
             <a href="nike-product.html"><button class="page-btn page-number" data-page="1">1</button></a>
             <a href="nike-product2.html"><button class="page-btn page-number" data-page="2">2</button></a>
-            <a href="nike-product3.html"><button class="page-btn page-number" data-page="3">3</button></a>
+            <a href="nike-product3.html"><button class="page-btn page-number active" data-page="3">3</button></a>
             <button id="next-page" class="page-btn">→</button>
           </div>
         </div>
