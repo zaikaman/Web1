@@ -94,6 +94,10 @@
             <a href="#settings" class="nav-link" data-section="settings">
                 <i class="fas fa-cog"></i> Cài Đặt
             </a>
+            <hr class="my-2" style="border-color: rgba(255,255,255,0.1);">
+            <a href="#" class="nav-link" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Đăng Xuất
+            </a>
         </div>
     </div>
 
@@ -265,7 +269,7 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td><img src="images/product1.jpg" alt="Nike Air Max" style="width: 50px;"></td>
+                                <td><img src="images/shoes/1.jpg" alt="Nike Air Max" style="width: 50px;"></td>
                                 <td>Nike Air Max</td>
                                 <td>Nike</td>
                                 <td>2.990.000đ</td>
@@ -442,30 +446,34 @@
     
     <!-- Custom JS -->
     <script>
+        // Kiểm tra đăng nhập ngay khi trang tải
         document.addEventListener('DOMContentLoaded', function() {
-            // Get all nav links
+            if (!localStorage.getItem('adminLoggedIn')) {
+                window.location.href = 'admin-login.html';
+                return;
+            }
+
+            // Existing tab functionality
             const navLinks = document.querySelectorAll('.nav-link');
-            
-            // Add click event to each nav link
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    // Remove active class from all links and sections
                     navLinks.forEach(l => l.classList.remove('active'));
                     document.querySelectorAll('.content-section').forEach(section => {
                         section.classList.remove('active');
                     });
-                    
-                    // Add active class to clicked link
                     this.classList.add('active');
-                    
-                    // Show corresponding section
                     const sectionId = this.getAttribute('data-section');
                     document.getElementById(sectionId).classList.add('active');
                 });
             });
         });
+
+        // Thêm chức năng đăng xuất
+        function logout() {
+            localStorage.removeItem('adminLoggedIn');
+            window.location.href = 'admin-login.html';
+        }
     </script>
 </body>
 </html> 

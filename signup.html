@@ -262,7 +262,7 @@
                 </div>
             </div>
             <div class="signin-right">
-                <form onsubmit="handleSignup(event)">
+                <form onsubmit="return handleSignup(event)">
                     <div class="firstname form-control1">
                         <input type="text" id="firstname" placeholder="Họ" required>
                     </div>
@@ -291,7 +291,7 @@
                     <div class="password form-control1">
                         <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu" required>
                     </div>
-                    <div class="recaptcha form-control1">This site is protected by reCAPTCHA and the Google <a href="">Privacy Policy</a> and <a href="">Terms of Service</a> apply.</div>
+                    <div id="error-message" style="color: red; display: none; margin: 10px 0;"></div>
                     <div class="submit">
                         <button type="submit" class="btn">ĐĂNG KÝ</button>
                         <div class="forgetpassword">
@@ -463,6 +463,55 @@
   <script src="plugins/uikit/uikit-icons.min.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/auth.js"></script>
+  <script>
+  function handleSignup(event) {
+      event.preventDefault();
+      
+      const firstname = document.getElementById('firstname').value;
+      const lastname = document.getElementById('lastname').value;
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const birthday = document.getElementById('birthday').value;
+      const gender = document.getElementById('female').checked ? 'Nữ' : 'Nam';
+      const errorMessage = document.getElementById('error-message');
+      
+      // Kiểm tra mật khẩu xác nhận
+      if (password !== confirmPassword) {
+          errorMessage.textContent = "Mật khẩu xác nhận không khớp!";
+          errorMessage.style.display = 'block';
+          return false;
+      }
+      
+      // Kiểm tra email đã tồn tại
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      if (users.some(user => user.email === email)) {
+          errorMessage.textContent = "Email này đã được đăng ký!";
+          errorMessage.style.display = 'block';
+          return false;
+      }
+      
+      // Thêm người dùng mới
+      users.push({
+          firstname,
+          lastname,
+          fullname: firstname + ' ' + lastname,
+          email,
+          password,
+          birthday,
+          gender
+      });
+      
+      // Lưu vào localStorage
+      localStorage.setItem('users', JSON.stringify(users));
+      
+      // Thông báo và chuyển đến trang đăng nhập
+      alert('Đăng ký thành công! Vui lòng đăng nhập.');
+      window.location.href = 'signin.html';
+      
+      return false;
+  }
+  </script>
 </body>
 
 </html>

@@ -262,13 +262,14 @@
                 </div>
             </div>
             <div class="signin-right">
-                <form onsubmit="handleSignin(event)">
+                <form onsubmit="return handleSignin(event)">
                     <div class="username form-control1">
-                        <input type="email" id="username" placeholder="Email" required>
+                        <input type="email" id="signin-email" placeholder="Email" required>
                     </div>
                     <div class="password form-control1">
-                        <input type="password" id="password" placeholder="Mật khẩu" required>
+                        <input type="password" id="signin-password" placeholder="Mật khẩu" required>
                     </div>
+                    <div id="error-message" style="color: red; display: none; margin: 10px 0;"></div>
                     <button type="submit">ĐĂNG NHẬP</button>
                     <div class="forgetpassword">
                         <a href="signup.html">Chưa có tài khoản? Đăng ký ngay</a>
@@ -439,6 +440,42 @@
   <script src="js/sign.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/auth.js"></script>
+  <script>
+  function handleSignin(event) {
+      event.preventDefault();
+      
+      const email = document.getElementById('signin-email').value;
+      const password = document.getElementById('signin-password').value;
+      const errorMessage = document.getElementById('error-message');
+      
+      // Lấy danh sách người dùng từ localStorage
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      
+      // Tìm người dùng theo email và password
+      const user = users.find(u => u.email === email && u.password === password);
+      
+      if (user) {
+          // Lưu thông tin đăng nhập
+          localStorage.setItem('currentUser', JSON.stringify({
+              fullname: user.fullname,
+              email: user.email,
+              firstname: user.firstname,
+              lastname: user.lastname,
+              birthday: user.birthday,
+              gender: user.gender
+          }));
+          
+          // Thông báo và chuyển về trang chủ
+          alert('Đăng nhập thành công!');
+          window.location.href = 'index.html';
+      } else {
+          errorMessage.textContent = "Email hoặc mật khẩu không đúng!";
+          errorMessage.style.display = 'block';
+      }
+      
+      return false;
+  }
+  </script>
 </body>
 
 </html>
