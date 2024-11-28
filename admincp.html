@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Trị</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --sidebar-width: 250px;
+        }
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: #2c3e50;
+            color: white;
+            padding-top: 20px;
+        }
+        .sidebar .nav-link {
+            color: #ecf0f1;
+            padding: 12px 20px;
+            margin: 4px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .sidebar .nav-link:hover {
+            background: #34495e;
+        }
+        .sidebar .nav-link.active {
+            background: #3498db;
+        }
+        .sidebar .nav-link i {
+            width: 24px;
+        }
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 20px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .stat-card {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+        }
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .btn-action {
+            padding: 4px 8px;
+            margin: 0 2px;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="text-center mb-4">
+            <h4>Trang Quản Trị</h4>
+        </div>
+        <div class="nav flex-column">
+            <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                <i class="fas fa-home"></i> Trang Chủ
+            </a>
+            <a href="#products" class="nav-link" data-section="products">
+                <i class="fas fa-box"></i> Sản Phẩm
+            </a>
+            <a href="#orders" class="nav-link" data-section="orders">
+                <i class="fas fa-shopping-cart"></i> Đơn Hàng
+            </a>
+            <a href="#users" class="nav-link" data-section="users">
+                <i class="fas fa-users"></i> Người Dùng
+            </a>
+            <a href="#posts" class="nav-link" data-section="posts">
+                <i class="fas fa-blog"></i> Bài Viết
+            </a>
+            <a href="#settings" class="nav-link" data-section="settings">
+                <i class="fas fa-cog"></i> Cài Đặt
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="content-section active">
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <h5>Tổng Sản Phẩm</h5>
+                                <h2>124</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <h5>Tổng Đơn Hàng</h5>
+                                <h2>56</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <h5>Tổng Người Dùng</h5>
+                                <h2>789</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <h5>Tổng Doanh Thu</h5>
+                                <h2>12.456.000đ</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Table -->
+                <div class="table-container mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4>Quản Lý Sản Phẩm</h4>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Thêm Sản Phẩm Mới
+                        </button>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mã SP</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Danh Mục</th>
+                                <th>Giá</th>
+                                <th>Tồn Kho</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nike Air Max</td>
+                                <td>Nike</td>
+                                <td>2.990.000đ</td>
+                                <td>45</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Adidas Ultraboost</td>
+                                <td>Adidas</td>
+                                <td>3.590.000đ</td>
+                                <td>32</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Converse Chuck 70</td>
+                                <td>Converse</td>
+                                <td>1.890.000đ</td>
+                                <td>67</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="table-container">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4>Đơn Hàng Gần Đây</h4>
+                        <button class="btn btn-primary">Xem Tất Cả Đơn Hàng</button>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mã Đơn</th>
+                                <th>Khách Hàng</th>
+                                <th>Sản Phẩm</th>
+                                <th>Tổng Tiền</th>
+                                <th>Trạng Thái</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ĐH001</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>Nike Air Max x2</td>
+                                <td>5.980.000đ</td>
+                                <td><span class="badge bg-success">Hoàn Thành</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ĐH002</td>
+                                <td>Trần Thị B</td>
+                                <td>Adidas Ultraboost</td>
+                                <td>3.590.000đ</td>
+                                <td><span class="badge bg-warning">Đang Xử Lý</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Products Section -->
+            <div id="products" class="content-section">
+                <div class="table-container">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4>Quản Lý Sản Phẩm</h4>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Thêm Sản Phẩm Mới
+                        </button>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mã SP</th>
+                                <th>Hình Ảnh</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Danh Mục</th>
+                                <th>Giá</th>
+                                <th>Tồn Kho</th>
+                                <th>Trạng Thái</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="images/product1.jpg" alt="Nike Air Max" style="width: 50px;"></td>
+                                <td>Nike Air Max</td>
+                                <td>Nike</td>
+                                <td>2.990.000đ</td>
+                                <td>45</td>
+                                <td><span class="badge bg-success">Còn Hàng</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <!-- More product rows... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Orders Section -->
+            <div id="orders" class="content-section">
+                <div class="table-container">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4>Quản Lý Đơn Hàng</h4>
+                        <div>
+                            <button class="btn btn-outline-primary me-2">Xuất Excel</button>
+                            <button class="btn btn-primary">Lọc Đơn Hàng</button>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mã Đơn</th>
+                                <th>Khách Hàng</th>
+                                <th>Sản Phẩm</th>
+                                <th>Tổng Tiền</th>
+                                <th>Ngày Đặt</th>
+                                <th>Trạng Thái</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ĐH001</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>Nike Air Max x2</td>
+                                <td>5.980.000đ</td>
+                                <td>20/11/2023</td>
+                                <td><span class="badge bg-success">Hoàn Thành</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
+                            <!-- More order rows... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Users Section -->
+            <div id="users" class="content-section">
+                <div class="table-container">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4>Quản Lý Người Dùng</h4>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i> Thêm Người Dùng
+                        </button>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Họ Tên</th>
+                                <th>Email</th>
+                                <th>Số Điện Thoại</th>
+                                <th>Vai Trò</th>
+                                <th>Trạng Thái</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>nguyenvana@email.com</td>
+                                <td>0123456789</td>
+                                <td>Khách hàng</td>
+                                <td><span class="badge bg-success">Hoạt động</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Khóa"><i class="fas fa-lock"></i></button>
+                                </td>
+                            </tr>
+                            <!-- More user rows... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Posts Section -->
+            <div id="posts" class="content-section">
+                <div class="table-container">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4>Quản Lý Bài Viết</h4>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Thêm Bài Viết
+                        </button>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tiêu Đề</th>
+                                <th>Danh Mục</th>
+                                <th>Tác Giả</th>
+                                <th>Ngày Đăng</th>
+                                <th>Trạng Thái</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Top 10 Mẫu Giày Hot Nhất 2023</td>
+                                <td>Tin Tức</td>
+                                <td>Admin</td>
+                                <td>20/11/2023</td>
+                                <td><span class="badge bg-success">Đã Đăng</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <!-- More post rows... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settings" class="content-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-4">Cài Đặt Hệ Thống</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Tên Website</label>
+                                <input type="text" class="form-control" value="Shoes Store">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Logo</label>
+                                <input type="file" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email Liên Hệ</label>
+                                <input type="email" class="form-control" value="contact@shoesstore.com">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Số Điện Thoại</label>
+                                <input type="tel" class="form-control" value="0123456789">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Địa Chỉ</label>
+                                <textarea class="form-control" rows="3">123 Đường ABC, Quận XYZ, TP.HCM</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Lưu Cài Đặt</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Add click event to each nav link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and sections
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    document.querySelectorAll('.content-section').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
