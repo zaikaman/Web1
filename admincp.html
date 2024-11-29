@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         :root {
             --sidebar-width: 250px;
@@ -169,8 +171,12 @@
                                 <td>2.990.000đ</td>
                                 <td>45</td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                    <button class="btn btn-sm btn-info btn-action btn-edit-product" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
@@ -180,8 +186,12 @@
                                 <td>3.590.000đ</td>
                                 <td>32</td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                    <button class="btn btn-sm btn-info btn-action btn-edit-product" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
@@ -191,8 +201,12 @@
                                 <td>1.890.000đ</td>
                                 <td>67</td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                    <button class="btn btn-sm btn-info btn-action btn-edit-product" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
@@ -202,8 +216,12 @@
                                 <td>4.290.000đ</td>
                                 <td>28</td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                    <button class="btn btn-sm btn-info btn-action btn-edit-product" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
@@ -213,8 +231,12 @@
                                 <td>2.790.000đ</td>
                                 <td>53</td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                    <button class="btn btn-sm btn-info btn-action btn-edit-product" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -379,8 +401,12 @@
                                         <td>${product.stock}</td>
                                         <td><span class="badge bg-success">Còn Hàng</span></td>
                                         <td>
-                                            <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                            <button class="btn btn-sm btn-info btn-action btn-edit-product" title="Sửa">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
                                         </td>
                                     </tr>
                                 `;
@@ -483,33 +509,14 @@
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4>Quản Lý Người Dùng</h4>
-                        <div class="search-box">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm người dùng...">
-                                <button class="btn btn-primary">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <select class="form-select">
-                                    <option value="">Vai trò</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="user">Người dùng</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <select class="form-select">
-                                    <option value="">Trạng thái</option>
-                                    <option value="active">Đang hoạt động</option>
-                                    <option value="inactive">Không hoạt động</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-primary w-100">Lọc</button>
+                        <div class="d-flex gap-2">
+                            <div class="search-box">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm người dùng...">
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -531,14 +538,33 @@
                                 <td>Nguyễn Văn A</td>
                                 <td>nguyenvana@email.com</td>
                                 <td>0123456789</td>
-                                <td>Khách hàng</td>
-                                <td><span class="badge bg-success">Hoạt động</span></td>
+                                <td>Người Dùng</td>
+                                <td><span class="badge bg-success">Hoạt Động</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Khóa"><i class="fas fa-lock"></i></button>
+                                    <button class="btn btn-sm btn-info btn-action btn-edit-user" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
-                            <!-- More user rows... -->
+                            <tr>
+                                <td>2</td>
+                                <td>Trần Thị B</td>
+                                <td>tranthib@email.com</td>
+                                <td>0987654321</td>
+                                <td>Quản Trị Viên</td>
+                                <td><span class="badge bg-success">Hoạt Động</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action btn-edit-user" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -563,28 +589,6 @@
                             </button>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <select class="form-select">
-                                    <option value="">Danh mục</option>
-                                    <option value="news">Tin tức</option>
-                                    <option value="review">Đánh giá</option>
-                                    <option value="guide">Hướng dẫn</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <select class="form-select">
-                                    <option value="">Trạng thái</option>
-                                    <option value="published">Đã đăng</option>
-                                    <option value="draft">Bản nháp</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-primary w-100">Lọc</button>
-                            </div>
-                        </div>
-                    </div>
                     <table class="table">
                         <thead>
                             <tr>
@@ -603,14 +607,33 @@
                                 <td>Top 10 Mẫu Giày Hot Nhất 2023</td>
                                 <td>Tin Tức</td>
                                 <td>Admin</td>
-                                <td>20/11/2023</td>
+                                <td>01/12/2023</td>
                                 <td><span class="badge bg-success">Đã Đăng</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                    <button class="btn btn-sm btn-info btn-action btn-edit-post" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
-                            <!-- More post rows... -->
+                            <tr>
+                                <td>2</td>
+                                <td>Cách Chọn Size Giày Phù Hợp</td>
+                                <td>Hướng Dẫn</td>
+                                <td>Admin</td>
+                                <td>30/11/2023</td>
+                                <td><span class="badge bg-warning">Bản Nháp</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action btn-edit-post" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -647,6 +670,227 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Modal Sửa Sản Phẩm -->
+            <div class="modal fade" id="editProductModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Sửa Thông Tin Sản Phẩm</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editProductForm">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Mã Sản Phẩm</label>
+                                        <input type="text" class="form-control" value="NK001" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Tên Sản Phẩm</label>
+                                        <input type="text" class="form-control" value="Nike Air Max 90">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Danh Mục</label>
+                                        <select class="form-select">
+                                            <option value="nike">Nike</option>
+                                            <option value="adidas">Adidas</option>
+                                            <option value="converse">Converse</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Giá</label>
+                                        <input type="text" class="form-control" value="3.600.000₫">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Tồn Kho</label>
+                                        <input type="number" class="form-control" value="45">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Trạng Thái</label>
+                                        <select class="form-select">
+                                            <option value="1">Còn Hàng</option>
+                                            <option value="0">Hết Hàng</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Hình Ảnh</label>
+                                    <input type="file" class="form-control">
+                                    <div class="mt-2">
+                                        <img src="images/shoes/1.jpg" alt="Preview" width="100">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Mô Tả</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary" onclick="showSuccessToast()">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Sửa Người Dùng -->
+            <div class="modal fade" id="editUserModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Sửa Thông Tin Người Dùng</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editUserForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Họ Tên</label>
+                                    <input type="text" class="form-control" value="Nguyễn Văn A">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" value="nguyenvana@email.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Số Điện Thoại</label>
+                                    <input type="tel" class="form-control" value="0123456789">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Địa Chỉ</label>
+                                    <textarea class="form-control" rows="2">123 Đường ABC, Quận XYZ, TP.HCM</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Vai Trò</label>
+                                    <select class="form-select">
+                                        <option value="user">Người Dùng</option>
+                                        <option value="admin">Quản Trị Viên</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Trạng Thái</label>
+                                    <select class="form-select">
+                                        <option value="1">Hoạt Động</option>
+                                        <option value="0">Khóa</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary" onclick="showSuccessToast()">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Sửa Bài Viết -->
+            <div class="modal fade" id="editPostModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Sửa Bài Viết</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editPostForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Tiêu Đề</label>
+                                    <input type="text" class="form-control" value="Top 10 Mẫu Giày Hot Nhất 2023">
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Danh Mục</label>
+                                        <select class="form-select">
+                                            <option value="news">Tin Tức</option>
+                                            <option value="review">Đánh Giá</option>
+                                            <option value="guide">Hướng Dẫn</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Trạng Thái</label>
+                                        <select class="form-select">
+                                            <option value="published">Đã Đăng</option>
+                                            <option value="draft">Bản Nháp</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Ảnh Bìa</label>
+                                    <input type="file" class="form-control">
+                                    <div class="mt-2">
+                                        <img src="images/blog/1.jpg" alt="Preview" width="200">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nội Dung</label>
+                                    <textarea class="form-control" rows="10">Nội dung bài viết...</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tags</label>
+                                    <input type="text" class="form-control" value="giày, thời trang, xu hướng">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary" onclick="showSuccessToast()">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toast Thông Báo -->
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            Lưu thành công!
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Khởi tạo các modal
+                const editProductModal = new bootstrap.Modal(document.getElementById('editProductModal'));
+                const editUserModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+                const editPostModal = new bootstrap.Modal(document.getElementById('editPostModal'));
+                const successToast = new bootstrap.Toast(document.getElementById('successToast'));
+
+                // Hàm hiển thị toast thành công
+                function showSuccessToast() {
+                    successToast.show();
+                    // Đóng modal sau khi lưu
+                    editProductModal.hide();
+                    editUserModal.hide();
+                    editPostModal.hide();
+                }
+
+                // Thêm sự kiện click cho các nút sửa
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Sửa sản phẩm
+                    document.querySelectorAll('.btn-edit-product').forEach(btn => {
+                        btn.addEventListener('click', () => editProductModal.show());
+                    });
+
+                    // Sửa người dùng
+                    document.querySelectorAll('.btn-edit-user').forEach(btn => {
+                        btn.addEventListener('click', () => editUserModal.show());
+                    });
+
+                    // Sửa bài viết
+                    document.querySelectorAll('.btn-edit-post').forEach(btn => {
+                        btn.addEventListener('click', () => editPostModal.show());
+                    });
+                });
+            </script>
         </div>
     </div>
 
