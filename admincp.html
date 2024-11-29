@@ -163,7 +163,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
+                                <td>SP001</td>
                                 <td>Nike Air Max</td>
                                 <td>Nike</td>
                                 <td>2.990.000đ</td>
@@ -174,7 +174,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>2</td>
+                                <td>SP002</td>
                                 <td>Adidas Ultraboost</td>
                                 <td>Adidas</td>
                                 <td>3.590.000đ</td>
@@ -185,11 +185,33 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>SP003</td>
                                 <td>Converse Chuck 70</td>
                                 <td>Converse</td>
                                 <td>1.890.000đ</td>
                                 <td>67</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>SP004</td>
+                                <td>Nike Air Jordan</td>
+                                <td>Nike</td>
+                                <td>4.290.000đ</td>
+                                <td>28</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>SP005</td>
+                                <td>Adidas NMD</td>
+                                <td>Adidas</td>
+                                <td>2.790.000đ</td>
+                                <td>53</td>
                                 <td>
                                     <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
                                     <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
@@ -249,9 +271,19 @@
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4>Quản Lý Sản Phẩm</h4>
-                        <button class="btn btn-primary">
-                            <i class="fas fa-plus"></i> Thêm Sản Phẩm Mới
-                        </button>
+                        <div class="d-flex gap-2">
+                            <div class="search-box">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Thêm Sản Phẩm
+                            </button>
+                        </div>
                     </div>
                     <table class="table">
                         <thead>
@@ -266,23 +298,116 @@
                                 <th>Thao Tác</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><img src="images/shoes/1.jpg" alt="Nike Air Max" style="width: 50px;"></td>
-                                <td>Nike Air Max</td>
-                                <td>Nike</td>
-                                <td>2.990.000đ</td>
-                                <td>45</td>
-                                <td><span class="badge bg-success">Còn Hàng</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <!-- More product rows... -->
+                        <tbody id="productTableBody">
+                            <!-- Sản phẩm sẽ được thêm vào đây bằng JavaScript -->
                         </tbody>
                     </table>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#" onclick="changePage('prev')">Trước</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#" onclick="changePage(1)">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#" onclick="changePage(2)">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#" onclick="changePage(3)">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#" onclick="changePage(4)">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#" onclick="changePage(5)">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#" onclick="changePage(6)">6</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" onclick="changePage('next')">Sau</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <script>
+                        const products = {
+                            1: [ // Trang 1 - 10 sản phẩm Nike
+                                {id: 'NK001', img: 'images/shoes/1.jpg', name: 'Nike Air Max 90', category: 'Nike', price: '3.600.000₫', stock: 45},
+                                {id: 'NK002', img: 'images/shoes/2.jpg', name: 'Nike Air Force 1', category: 'Nike', price: '2.900.000₫', stock: 38},
+                                {id: 'NK003', img: 'images/shoes/3.jpg', name: 'Nike React Element', category: 'Nike', price: '3.200.000₫', stock: 52},
+                                {id: 'NK004', img: 'images/shoes/4.jpg', name: 'Nike Zoom Pegasus', category: 'Nike', price: '3.400.000₫', stock: 35},
+                                {id: 'NK005', img: 'images/shoes/5.jpg', name: 'Nike Joyride Run', category: 'Nike', price: '3.800.000₫', stock: 41},
+                                {id: 'NK006', img: 'images/shoes/6.jpg', name: 'Nike Free RN', category: 'Nike', price: '2.800.000₫', stock: 48},
+                                {id: 'NK007', img: 'images/shoes/7.jpg', name: 'Nike Metcon', category: 'Nike', price: '3.200.000₫', stock: 39},
+                                {id: 'NK008', img: 'images/shoes/8.jpg', name: 'Nike Zoom Fly', category: 'Nike', price: '3.500.000₫', stock: 44},
+                                {id: 'NK009', img: 'images/shoes/9.jpg', name: 'Nike Air Max 270', category: 'Nike', price: '3.900.000₫', stock: 37},
+                                {id: 'NK010', img: 'images/shoes/10.jpg', name: 'Nike SB Dunk', category: 'Nike', price: '2.900.000₫', stock: 31}
+                            ],
+                            2: [ // Trang 2 - 3 sản phẩm Adidas
+                                {id: 'AD001', img: 'images/Adidas/1.jpg', name: 'Adidas Ultra Boost 21', category: 'Adidas', price: '4.800.000₫', stock: 36},
+                                {id: 'AD002', img: 'images/Adidas/2.jpg', name: 'Adidas NMD R1', category: 'Adidas', price: '3.200.000₫', stock: 42},
+                                {id: 'AD003', img: 'images/Adidas/3.jpg', name: 'Adidas Superstar', category: 'Adidas', price: '2.400.000₫', stock: 55}
+                            ],
+                            3: [ // Trang 3 - 3 sản phẩm Adidas
+                                {id: 'AD004', img: 'images/Adidas/4.jpg', name: 'Adidas Stan Smith', category: 'Adidas', price: '2.200.000₫', stock: 47},
+                                {id: 'AD005', img: 'images/Adidas/5.jpg', name: 'Adidas Gazelle', category: 'Adidas', price: '2.100.000₫', stock: 33},
+                                {id: 'AD006', img: 'images/Adidas/6.jpg', name: 'Adidas Yeezy 350', category: 'Adidas', price: '6.500.000₫', stock: 15}
+                            ],
+                            4: [ // Trang 4 - 3 sản phẩm Converse
+                                {id: 'CV001', img: 'images/Converse/1-1.jpg', name: 'Converse Chuck 70s High', category: 'Converse', price: '1.900.000₫', stock: 62},
+                                {id: 'CV002', img: 'images/Converse/2-1.jpg', name: 'Converse Chuck 70s Low', category: 'Converse', price: '1.800.000₫', stock: 45},
+                                {id: 'CV003', img: 'images/Converse/3-1.jpg', name: 'Converse Classic High', category: 'Converse', price: '1.500.000₫', stock: 58}
+                            ],
+                            5: [ // Trang 5 - 3 sản phẩm Converse
+                                {id: 'CV004', img: 'images/Converse/4-1.jpg', name: 'Converse Classic Low', category: 'Converse', price: '1.400.000₫', stock: 51},
+                                {id: 'CV005', img: 'images/Converse/5-1.jpg', name: 'Converse CDG High', category: 'Converse', price: '2.500.000₫', stock: 29},
+                                {id: 'CV006', img: 'images/Converse/6-1.jpg', name: 'Converse CDG Low', category: 'Converse', price: '2.300.000₫', stock: 34}
+                            ],
+                            6: [ // Trang 6 - 3 sản phẩm Mix
+                                {id: 'CV007', img: 'images/Converse/9-1.jpg', name: 'Converse One Star', category: 'Converse', price: '1.700.000₫', stock: 46},
+                                {id: 'AD007', img: 'images/Adidas/7.jpg', name: 'Adidas Forum Low', category: 'Adidas', price: '2.400.000₫', stock: 43},
+                                {id: 'CV008', img: 'images/Converse/8-1.jpg', name: 'Converse Run Star Hike', category: 'Converse', price: '2.200.000₫', stock: 38}
+                            ]
+                        };
+
+                        let currentPage = 1;
+
+                        function renderProducts(page) {
+                            const tableBody = document.getElementById('productTableBody');
+                            tableBody.innerHTML = '';
+                            
+                            products[page].forEach(product => {
+                                const row = `
+                                    <tr>
+                                        <td>${product.id}</td>
+                                        <td><img src="${product.img}" width="50" height="50" alt="${product.name}"></td>
+                                        <td>${product.name}</td>
+                                        <td>${product.category}</td>
+                                        <td>${product.price}</td>
+                                        <td>${product.stock}</td>
+                                        <td><span class="badge bg-success">Còn Hàng</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                `;
+                                tableBody.innerHTML += row;
+                            });
+
+                            // Cập nhật active page
+                            document.querySelectorAll('.page-item').forEach(item => {
+                                item.classList.remove('active');
+                            });
+                            document.querySelector(`.page-item:nth-child(${page + 1})`).classList.add('active');
+                        }
+
+                        function changePage(page) {
+                            if (page === 'prev') {
+                                if (currentPage > 1) currentPage--;
+                            } else if (page === 'next') {
+                                if (currentPage < 6) currentPage++;
+                            } else {
+                                currentPage = page;
+                            }
+                            renderProducts(currentPage);
+                        }
+
+                        // Khởi tạo trang đầu tiên
+                        renderProducts(1);
+                    </script>
                 </div>
             </div>
 
@@ -291,9 +416,35 @@
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4>Quản Lý Đơn Hàng</h4>
-                        <div>
-                            <button class="btn btn-outline-primary me-2">Xuất Excel</button>
-                            <button class="btn btn-primary">Lọc Đơn Hàng</button>
+                        <div class="search-box">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm đơn hàng...">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <select class="form-select">
+                                    <option value="">Trạng thái đơn hàng</option>
+                                    <option value="pending">Đang xử lý</option>
+                                    <option value="processing">Đang giao</option>
+                                    <option value="completed">Hoàn thành</option>
+                                    <option value="cancelled">Đã hủy</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="date" class="form-control" placeholder="Từ ngày">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="date" class="form-control" placeholder="Đến ngày">
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary w-100">Lọc</button>
+                            </div>
                         </div>
                     </div>
                     <table class="table">
@@ -332,9 +483,35 @@
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4>Quản Lý Người Dùng</h4>
-                        <button class="btn btn-primary">
-                            <i class="fas fa-user-plus"></i> Thêm Người Dùng
-                        </button>
+                        <div class="search-box">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm người dùng...">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <select class="form-select">
+                                    <option value="">Vai trò</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="user">Người dùng</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select">
+                                    <option value="">Trạng thái</option>
+                                    <option value="active">Đang hoạt động</option>
+                                    <option value="inactive">Không hoạt động</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-primary w-100">Lọc</button>
+                            </div>
+                        </div>
                     </div>
                     <table class="table">
                         <thead>
@@ -372,9 +549,41 @@
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4>Quản Lý Bài Viết</h4>
-                        <button class="btn btn-primary">
-                            <i class="fas fa-plus"></i> Thêm Bài Viết
-                        </button>
+                        <div class="d-flex gap-2">
+                            <div class="search-box">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm bài viết...">
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Thêm Bài Viết
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <select class="form-select">
+                                    <option value="">Danh mục</option>
+                                    <option value="news">Tin tức</option>
+                                    <option value="review">Đánh giá</option>
+                                    <option value="guide">Hướng dẫn</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select">
+                                    <option value="">Trạng thái</option>
+                                    <option value="published">Đã đăng</option>
+                                    <option value="draft">Bản nháp</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-primary w-100">Lọc</button>
+                            </div>
+                        </div>
                     </div>
                     <table class="table">
                         <thead>
