@@ -111,12 +111,11 @@ $(document).ready(function () {
             // Xóa loading
             $('#loading').remove();
             
-            // Chọn ngẫu nhiên 3 sản phẩm
-            const shuffled = products.toArray().sort(() => 0.5 - Math.random());
-            const selected = shuffled.slice(0, 3);
+            // Lấy 3 sản phẩm đầu tiên
+            const firstThree = products.slice(0, 3);
             
-            // Hiển thị 3 sản phẩm được chọn với animation
-            $(selected).each(function(index) {
+            // Hiển thị 3 sản phẩm đầu tiên với animation
+            $(firstThree).each(function(index) {
                 $(this).delay(index * 200).fadeIn(300);
             });
         }, 800);
