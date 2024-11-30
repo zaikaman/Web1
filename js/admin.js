@@ -37,6 +37,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Xử lý nút xóa trong các tab
+    document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', function() {
+            const itemType = this.closest('table').id.replace('-table', '');
+            const itemName = {
+                'products': 'sản phẩm',
+                'orders': 'đơn hàng', 
+                'users': 'người dùng',
+                'posts': 'bài viết'
+            }[itemType] || 'mục';
+            
+            if (confirm(`Bạn có chắc chắn muốn xóa ${itemName} này?`)) {
+                // Xóa hàng chứa nút xóa được click
+                this.closest('tr').remove();
+                // Hiển thị thông báo
+                alert(`Đã xóa ${itemName} thành công!`);
+            }
+        });
+    });
+
     // Khởi tạo modal
     const orderDetailModal = new bootstrap.Modal(document.getElementById('orderDetailModal'));
 
