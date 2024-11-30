@@ -4,32 +4,6 @@ $(document).ready(function () {
         var aaa = screen.width;
         if (aaa > 1111) {
             var height = $(window).scrollTop();
-            // console.log("height", height);
-            // console.log("heading:", heading);
-            // if (height > 700 && height < 4300) {
-            //     $('.product-content-desc').css({
-            //        "position":"fixed",
-            //        "right": "0",
-            //        "top": "100px",
-            //        "transition": "all 0.4s"
-
-            //     });
-
-            // } 
-            // if(height >4300)  {
-            //     $('.product-content-desc').css({
-            //         "z-index": "-1",
-            //         "transition": "all 0.4s"
-
-            //     });
-            // }
-            // else{
-            //     $('.product-content-desc').css({
-            //         "z-index": "9999",
-            //         "transition": "all 0.4s"
-
-            //     });
-            // }
         }
     });
 
@@ -45,15 +19,12 @@ $(document).ready(function () {
 
         var hrefAttr = $('.' + a).attr('data-image');
         console.log(hrefAttr);
-
-
-
     });
+
     var id1 = 1
     $('.product-gallery__thumb').click(function (e) {
         e.preventDefault();
         id1 = $(this).attr('id') + 'a';
-        // var offset = $('#'+ id1).offset();
         console.log(id1);
         var elmnt = document.getElementById('' + id1);
         elmnt.scrollIntoView({
@@ -61,16 +32,15 @@ $(document).ready(function () {
             behavior: 'smooth',
             inline: 'start'
         });
-
-
-
     });
+
     var ac = screen.width;
     if (ac < 768) {
         $('.product-content-desc').css({
             "position": "relative",
         })
     }
+
     $('.owl-product1').owlCarousel({
         loop: true,
         margin: 0,
@@ -89,21 +59,19 @@ $(document).ready(function () {
             }
         }
     })
+
     $('.zoom-in').click(function (e) {
         e.preventDefault();
         $('.product-zoom11').slideDown();
         e.stopPropagation();
-        // $('html,body').fadeOut();
-
-
-
     });
+
     $('.divclose').click(function (e) {
         e.preventDefault();
         $('.product-zoom11').slideUp();
         e.stopPropagation();
-
     });
+
     $('.registratior_custom').fadeIn(200);
     $('.x-close').click(function (e) {
         e.preventDefault();
@@ -115,7 +83,6 @@ $(document).ready(function () {
         const elements = document.querySelectorAll('.slide-in, .slide-in-left, .slide-in-right');
         
         elements.forEach(element => {
-            // Vị trí của phần tử so với viewport
             const slideInAt = (window.scrollY + window.innerHeight) - element.offsetHeight / 2;
             const elementBottom = element.offsetTop + element.offsetHeight;
             const isHalfShown = slideInAt > element.offsetTop;
@@ -127,9 +94,48 @@ $(document).ready(function () {
         });
     }
 
-    // Thêm event listener cho scroll
     window.addEventListener('scroll', checkSlide);
-    // Chạy một lần khi trang load để kiểm tra các phần tử đã hiển thị
     window.addEventListener('load', checkSlide);
 
+    // Chức năng tìm kiếm giả
+    function filterProducts() {
+        const products = $('#product-container .product-block').parent();
+        
+        // Ẩn tất cả sản phẩm với animation
+        products.fadeOut(300);
+        
+        // Hiển thị loading
+        $('#product-container').append('<div id="loading" class="text-center w-100 my-4"><i class="fas fa-spinner fa-spin fa-2x"></i></div>');
+        
+        setTimeout(() => {
+            // Xóa loading
+            $('#loading').remove();
+            
+            // Chọn ngẫu nhiên 3 sản phẩm
+            const shuffled = products.toArray().sort(() => 0.5 - Math.random());
+            const selected = shuffled.slice(0, 3);
+            
+            // Hiển thị 3 sản phẩm được chọn với animation
+            $(selected).each(function(index) {
+                $(this).delay(index * 200).fadeIn(300);
+            });
+        }, 800);
+    }
+
+    // Xử lý sự kiện tìm kiếm
+    $('#sidebar-search-input, #nav-search-input').on('input', function() {
+        if($(this).val().length > 0) {
+            filterProducts();
+        }
+    });
+
+    // Xử lý sự kiện thay đổi khoảng giá
+    $('#price-range').change(function() {
+        filterProducts();
+    });
+
+    // Xử lý sự kiện sắp xếp
+    $('#sort-by').change(function() {
+        filterProducts();
+    });
 });
