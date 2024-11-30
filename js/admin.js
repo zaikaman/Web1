@@ -37,22 +37,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Xử lý nút xóa trong các tab
-    document.querySelectorAll('.btn-delete').forEach(button => {
+    // Xử lý nút xóa
+    const deleteButtons = document.querySelectorAll('.btn-delete');
+    
+    deleteButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const itemType = this.closest('table').id.replace('-table', '');
-            const itemName = {
-                'products': 'sản phẩm',
-                'orders': 'đơn hàng', 
-                'users': 'người dùng',
-                'posts': 'bài viết'
-            }[itemType] || 'mục';
+            // Xác định loại item dựa vào ID của bảng chứa nút
+            const table = this.closest('table');
+            let itemType = '';
             
-            if (confirm(`Bạn có chắc chắn muốn xóa ${itemName} này?`)) {
-                // Xóa hàng chứa nút xóa được click
-                this.closest('tr').remove();
-                // Hiển thị thông báo
-                alert(`Đã xóa ${itemName} thành công!`);
+            if (table.id === 'productTable') {
+                itemType = 'sản phẩm';
+            } else if (table.id === 'orderTable') {
+                itemType = 'đơn hàng';  
+            } else if (table.id === 'userTable') {
+                itemType = 'người dùng';
+            } else if (table.id === 'blogTable') {
+                itemType = 'bài viết';
+            }
+
+            // Hiện hộp thoại xác nhận
+            if (confirm(`Bạn có chắc chắn muốn xóa ${itemType} này?`)) {
+                // Chỉ hiện thông báo thành công
+                alert(`Đã xóa ${itemType} thành công!`);
             }
         });
     });
