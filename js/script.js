@@ -100,6 +100,38 @@ $(document).ready(function () {
     // Chức năng tìm kiếm giả
     function filterProducts() {
         const products = $('#product-container .product-block').parent();
+        const searchInput = $('#sidebar-search-input').val().trim() || $('#nav-search-input').val().trim();
+        const priceRange = $('#price-range option:selected').text();
+        const sortBy = $('#sort-by option:selected').text();
+        
+        // Xóa loading nếu có
+        $('#loading').remove();
+
+        // Kiểm tra tất cả điều kiện có ở trạng thái mặc định không
+        const isDefaultState = !searchInput && 
+                             priceRange === 'Tất cả giá' && 
+                             sortBy === 'Tên A-Z';
+
+        console.log('Current State:', {
+            searchInput,
+            priceRange,
+            sortBy,
+            isDefault: isDefaultState
+        });
+
+        // Nếu tất cả đều ở trạng thái mặc định
+        if (isDefaultState) {
+            // Hiển thị lại tất cả sản phẩm với animation
+            products.stop(true, true).each(function(index) {
+                const product = $(this);
+                product.show();
+                product.css('opacity', '0');
+                setTimeout(() => {
+                    product.animate({opacity: 1}, 300);
+                }, index * 50);
+            });
+            return;
+        }
         
         // Ẩn tất cả sản phẩm với animation
         products.fadeOut(300);
@@ -115,17 +147,20 @@ $(document).ready(function () {
             const firstThree = products.slice(0, 3);
             
             // Hiển thị 3 sản phẩm đầu tiên với animation
-            $(firstThree).each(function(index) {
-                $(this).delay(index * 200).fadeIn(300);
+            firstThree.each(function(index) {
+                const product = $(this);
+                product.show();
+                product.css('opacity', '0');
+                setTimeout(() => {
+                    product.animate({opacity: 1}, 300);
+                }, index * 200);
             });
         }, 800);
     }
 
     // Xử lý sự kiện tìm kiếm
     $('#sidebar-search-input, #nav-search-input').on('input', function() {
-        if($(this).val().length > 0) {
-            filterProducts();
-        }
+        filterProducts();
     });
 
     // Xử lý sự kiện thay đổi khoảng giá

@@ -70,6 +70,7 @@
             display: block;
         }
     </style>
+    <script src="js/admin-search.js" defer></script>
 </head>
 <body class="bg-light">
     <!-- Sidebar -->
@@ -247,7 +248,7 @@
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4>Đơn Hàng Gần Đây</h4>
-                        <button class="btn btn-primary">Xem Tất Cả Đơn Hàng</button>
+                        <button class="btn btn-primary" id="viewAllOrdersBtn">Xem Tất Cả Đơn Hàng</button>
                     </div>
                     <table class="table">
                         <thead>
@@ -293,21 +294,16 @@
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4>Quản Lý Sản Phẩm</h4>
-                        <div class="d-flex gap-2">
-                            <div class="search-box">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
-                                    <button class="btn btn-primary">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
+                        <div class="search-box">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="product-search" placeholder="Tìm kiếm sản phẩm...">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
                             </div>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
-                                <i class="fas fa-plus"></i> Thêm Sản Phẩm
-                            </button>
                         </div>
                     </div>
-                    <table class="table">
+                    <table class="table" id="products-table">
                         <thead>
                             <tr>
                                 <th>Mã SP</th>
@@ -444,36 +440,14 @@
                         <h4>Quản Lý Đơn Hàng</h4>
                         <div class="search-box">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm đơn hàng...">
+                                <input type="text" class="form-control" id="order-search" placeholder="Tìm kiếm đơn hàng...">
                                 <button class="btn btn-primary">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <div class="row g-3">
-                            <div class="col-md-3">
-                                <select class="form-select">
-                                    <option value="">Trạng thái đơn hàng</option>
-                                    <option value="pending">Đang xử lý</option>
-                                    <option value="processing">Đang giao</option>
-                                    <option value="completed">Hoàn thành</option>
-                                    <option value="cancelled">Đã hủy</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="date" class="form-control" placeholder="Từ ngày">
-                            </div>
-                            <div class="col-md-3">
-                                <input type="date" class="form-control" placeholder="Đến ngày">
-                            </div>
-                            <div class="col-md-3">
-                                <button class="btn btn-primary w-100">Lọc</button>
-                            </div>
-                        </div>
-                    </div>
-                    <table class="table">
+                    <table class="table" id="orders-table">
                         <thead>
                             <tr>
                                 <th>Mã Đơn</th>
@@ -498,7 +472,90 @@
                                     <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
                                 </td>
                             </tr>
-                            <!-- More order rows... -->
+                            <tr>
+                                <td>#ĐH002</td>
+                                <td>Trần Thị B</td>
+                                <td>Adidas Ultraboost</td>
+                                <td>3.590.000đ</td>
+                                <td>21/11/2023</td>
+                                <td><span class="badge bg-warning">Đang Xử Lý</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ĐH003</td>
+                                <td>Lê Văn C</td>
+                                <td>Converse Chuck 70s</td>
+                                <td>1.890.000đ</td>
+                                <td>22/11/2023</td>
+                                <td><span class="badge bg-info">Đang Giao</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ĐH004</td>
+                                <td>Phạm Thị D</td>
+                                <td>Nike Air Jordan</td>
+                                <td>4.290.000đ</td>
+                                <td>23/11/2023</td>
+                                <td><span class="badge bg-success">Hoàn Thành</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ĐH005</td>
+                                <td>Hoàng Văn E</td>
+                                <td>Adidas NMD R1</td>
+                                <td>2.790.000đ</td>
+                                <td>24/11/2023</td>
+                                <td><span class="badge bg-danger">Đã Hủy</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ĐH006</td>
+                                <td>Ngô Thị F</td>
+                                <td>Nike Air Force 1</td>
+                                <td>2.900.000đ</td>
+                                <td>25/11/2023</td>
+                                <td><span class="badge bg-info">Đang Giao</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ĐH007</td>
+                                <td>Đỗ Văn G</td>
+                                <td>Converse CDG</td>
+                                <td>2.500.000đ</td>
+                                <td>26/11/2023</td>
+                                <td><span class="badge bg-warning">Đang Xử Lý</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ĐH008</td>
+                                <td>Vũ Thị H</td>
+                                <td>Adidas Superstar</td>
+                                <td>2.200.000đ</td>
+                                <td>27/11/2023</td>
+                                <td><span class="badge bg-success">Hoàn Thành</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -509,18 +566,16 @@
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4>Quản Lý Người Dùng</h4>
-                        <div class="d-flex gap-2">
-                            <div class="search-box">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Tìm kiếm người dùng...">
-                                    <button class="btn btn-primary">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
+                        <div class="search-box">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="user-search" placeholder="Tìm kiếm người dùng...">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <table class="table">
+                    <table class="table" id="users-table">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -541,12 +596,8 @@
                                 <td>Người Dùng</td>
                                 <td><span class="badge bg-success">Hoạt Động</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" data-bs-toggle="modal" data-bs-target="#editUserModal" title="Sửa">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -557,12 +608,80 @@
                                 <td>Quản Trị Viên</td>
                                 <td><span class="badge bg-success">Hoạt Động</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" data-bs-toggle="modal" data-bs-target="#editUserModal" title="Sửa">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Lê Văn C</td>
+                                <td>levanc@email.com</td>
+                                <td>0369852147</td>
+                                <td>Người Dùng</td>
+                                <td><span class="badge bg-warning">Chờ Duyệt</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Phạm Thị D</td>
+                                <td>phamthid@email.com</td>
+                                <td>0741852963</td>
+                                <td>Người Dùng</td>
+                                <td><span class="badge bg-success">Hoạt Động</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Hoàng Văn E</td>
+                                <td>hoangvane@email.com</td>
+                                <td>0852963741</td>
+                                <td>Người Dùng</td>
+                                <td><span class="badge bg-danger">Đã Khóa</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Ngô Thị F</td>
+                                <td>ngothif@email.com</td>
+                                <td>0963852741</td>
+                                <td>Người Dùng</td>
+                                <td><span class="badge bg-success">Hoạt Động</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Đỗ Văn G</td>
+                                <td>dovang@email.com</td>
+                                <td>0147852369</td>
+                                <td>Người Dùng</td>
+                                <td><span class="badge bg-success">Hoạt Động</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Vũ Thị H</td>
+                                <td>vuthih@email.com</td>
+                                <td>0258963147</td>
+                                <td>Người Dùng</td>
+                                <td><span class="badge bg-warning">Chờ Duyệt</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -575,21 +694,16 @@
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4>Quản Lý Bài Viết</h4>
-                        <div class="d-flex gap-2">
-                            <div class="search-box">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Tìm kiếm bài viết...">
-                                    <button class="btn btn-primary">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
+                        <div class="search-box">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="post-search" placeholder="Tìm kiếm bài viết...">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
                             </div>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPostModal">
-                                <i class="fas fa-plus"></i> Thêm Bài Viết
-                            </button>
                         </div>
                     </div>
-                    <table class="table">
+                    <table class="table" id="posts-table">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -610,12 +724,8 @@
                                 <td>01/12/2023</td>
                                 <td><span class="badge bg-success">Đã Đăng</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" data-bs-toggle="modal" data-bs-target="#editPostModal" title="Sửa">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -626,12 +736,80 @@
                                 <td>30/11/2023</td>
                                 <td><span class="badge bg-warning">Bản Nháp</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-info btn-action" data-bs-toggle="modal" data-bs-target="#editPostModal" title="Sửa">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Xu Hướng Giày Thể Thao 2024</td>
+                                <td>Tin Tức</td>
+                                <td>Admin</td>
+                                <td>29/11/2023</td>
+                                <td><span class="badge bg-success">Đã Đăng</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Review Chi Tiết Nike Air Max 2023</td>
+                                <td>Đánh Giá</td>
+                                <td>Admin</td>
+                                <td>28/11/2023</td>
+                                <td><span class="badge bg-success">Đã Đăng</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Bí Quyết Bảo Quản Giày Thể Thao</td>
+                                <td>Hướng Dẫn</td>
+                                <td>Admin</td>
+                                <td>27/11/2023</td>
+                                <td><span class="badge bg-success">Đã Đăng</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>So Sánh Nike vs Adidas 2023</td>
+                                <td>Đánh Giá</td>
+                                <td>Admin</td>
+                                <td>26/11/2023</td>
+                                <td><span class="badge bg-warning">Bản Nháp</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Lịch Sử Phát Triển Của Converse</td>
+                                <td>Tin Tức</td>
+                                <td>Admin</td>
+                                <td>25/11/2023</td>
+                                <td><span class="badge bg-success">Đã Đăng</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Cách Phối Đồ Với Giày Thể Thao</td>
+                                <td>Hướng Dẫn</td>
+                                <td>Admin</td>
+                                <td>24/11/2023</td>
+                                <td><span class="badge bg-success">Đã Đăng</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info btn-action" title="Sửa"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -1016,6 +1194,7 @@
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
     
     <!-- Custom JS -->
     <script>
