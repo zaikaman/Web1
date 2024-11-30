@@ -473,40 +473,55 @@
       const password = document.getElementById('signup-password').value;
       const confirmPassword = document.getElementById('confirm-password').value;
       const birthday = document.getElementById('birthday').value;
-      const gender = document.getElementById('female').checked ? 'Nữ' : 'Nam';
       const errorMessage = document.getElementById('error-message');
       
-      // Kiểm tra mật khẩu xác nhận
+      // Validate first name
+      if (firstname.trim().length < 2) {
+          errorMessage.textContent = "Họ phải có ít nhất 2 ký tự!";
+          errorMessage.style.display = 'block';
+          return false;
+      }
+      
+      // Validate last name
+      if (lastname.trim().length < 2) {
+          errorMessage.textContent = "Tên phải có ít nhất 2 ký tự!";
+          errorMessage.style.display = 'block';
+          return false;
+      }
+      
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+          errorMessage.textContent = "Email không hợp lệ!";
+          errorMessage.style.display = 'block';
+          return false;
+      }
+      
+      // Validate password length and complexity
+      if (password.length < 6) {
+          errorMessage.textContent = "Mật khẩu phải có ít nhất 6 ký tự!";
+          errorMessage.style.display = 'block';
+          return false;
+      }
+      
+      // Validate password confirmation
       if (password !== confirmPassword) {
           errorMessage.textContent = "Mật khẩu xác nhận không khớp!";
           errorMessage.style.display = 'block';
           return false;
       }
       
-      // Kiểm tra email đã tồn tại
-      const users = JSON.parse(localStorage.getItem('users') || '[]');
-      if (users.some(user => user.email === email)) {
-          errorMessage.textContent = "Email này đã được đăng ký!";
+      // Validate birthday (must be in the past)
+      const birthdayDate = new Date(birthday);
+      const today = new Date();
+      if (birthdayDate >= today) {
+          errorMessage.textContent = "Ngày sinh không hợp lệ!";
           errorMessage.style.display = 'block';
           return false;
       }
       
-      // Thêm người dùng mới
-      users.push({
-          firstname,
-          lastname,
-          fullname: firstname + ' ' + lastname,
-          email,
-          password,
-          birthday,
-          gender
-      });
-      
-      // Lưu vào localStorage
-      localStorage.setItem('users', JSON.stringify(users));
-      
-      // Thông báo và chuyển đến trang đăng nhập
-      alert('Đăng ký thành công! Vui lòng đăng nhập.');
+      // If all validations pass, show success and redirect
+      alert('Đăng ký thành công!');
       window.location.href = 'signin.html';
       
       return false;

@@ -444,34 +444,9 @@
   function handleSignin(event) {
       event.preventDefault();
       
-      const email = document.getElementById('signin-email').value;
-      const password = document.getElementById('signin-password').value;
-      const errorMessage = document.getElementById('error-message');
-      
-      // Lấy danh sách người dùng từ localStorage
-      const users = JSON.parse(localStorage.getItem('users') || '[]');
-      
-      // Tìm người dùng theo email và password
-      const user = users.find(u => u.email === email && u.password === password);
-      
-      if (user) {
-          // Lưu thông tin đăng nhập
-          localStorage.setItem('currentUser', JSON.stringify({
-              fullname: user.fullname,
-              email: user.email,
-              firstname: user.firstname,
-              lastname: user.lastname,
-              birthday: user.birthday,
-              gender: user.gender
-          }));
-          
-          // Thông báo và chuyển về trang chủ
-          alert('Đăng nhập thành công!');
-          window.location.href = 'index.html';
-      } else {
-          errorMessage.textContent = "Email hoặc mật khẩu không đúng!";
-          errorMessage.style.display = 'block';
-      }
+      // Show success message and redirect
+      alert('Đăng nhập thành công!');
+      window.location.href = 'index.html';
       
       return false;
   }
