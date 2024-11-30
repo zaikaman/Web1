@@ -292,7 +292,7 @@
           <div class="box-send-contact">
             <h2>Gửi thắc mắc cho chúng tôi</h2>
             <div id="col-left contactFormWrapper menuList-links">
-              <form accept-charset="UTF-8" action="/contact" class="contact-form" method="post">
+              <form accept-charset="UTF-8" action="/contact" class="contact-form" method="post" onsubmit="showConfirmation(event)">
                 <div class="contact-form">
                   <div class="row">
                     <div class="col-sm-12 col-xs-12">
@@ -475,7 +475,7 @@
       <div class="container">
         <hr>
         <div class="main-footer--border" style="text-align:center;padding-bottom: 15px;">
-          <p>Copyright © 2019 <a href="https://runner-inn.myharavan.com"> Runner Inn</a>. <a target="_blank"
+          <p>Copyright 2019 <a href="https://runner-inn.myharavan.com"> Runner Inn</a>. <a target="_blank"
               href="https://www.facebook.com/henrynguyen202">Powered by HuniBlue</a></p>
         </div>
       </div>
@@ -491,6 +491,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js"></script>
   <script src="js/cart.js"></script>
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault();
+      alert("Đã gửi email cho team Runner Inn");
+      event.target.reset();
+    }
+  </script>
 </body>
 
 </html>
