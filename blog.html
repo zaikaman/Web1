@@ -123,8 +123,7 @@
         </div>
       </div>
       <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="    background: white;
-            width: 350px;">
+        <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
 
           <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
 
@@ -135,48 +134,14 @@
                 font-weight: 500; letter-spacing: 2px;">Tìm kiếm</h3>
           <div class="search-box wpo-wrapper-search">
             <form action="search" class="searchform searchform-categoris ultimate-search">
-              <div class="wpo-search-inner" style="display:inline">
-                <input type="hidden" name="type" value="product">
+              <div class="wpo-search-inner" style="display:flex; align-items:center;">
                 <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
                   class="searchinput input-search search-input" type="text" size="20"
                   placeholder="Tìm kiếm sản phẩm...">
+                <a href="search-result.html" id="search-header-btn" style="margin-left:5px; background: transparent; border: none; transition: all 0.3s ease;">
+                  <i class="fas fa-search" style="font-size: 18px; color: #272727; padding: 8px; border-radius: 50%;"></i>
+                </a>
               </div>
-              <button type="submit" class="btn-search btn" id="search-header-btn">
-                <i style="font-weight:bold" class="fas fa-search"></i>
-              </button>
-              <div class="search-item">
-                  <div class="search-item-left">
-                      <div class="item-name">Adidas</div>
-                      <div class="item-price">1.600.000$</div>
-                  </div>
-                  <div class="search-item-right">
-                      <div class="img">
-                          <img src="images/shoes/1.jpg" alt="">
-                      </div>
-                  </div>
-              </div>
-              <div class="search-item">
-                <div class="search-item-left">
-                    <div class="item-name">Adidas</div>
-                    <div class="item-price">1.600.000$</div>
-                </div>
-                <div class="search-item-right">
-                    <div class="img">
-                        <img src="images/shoes/1.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="search-item">
-                <div class="search-item-left">
-                    <div class="item-name">Adidas</div>
-                    <div class="item-price">1.600.000$</div>
-                </div>
-                <div class="search-item-right">
-                    <div class="img">
-                        <img src="images/shoes/1.jpg" alt="">
-                    </div>
-                </div>
-            </div>
             </form>
             <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults" style="display: none">
               <div class="resultsContent"></div>
@@ -222,7 +187,7 @@
                     <td class="text-right" id="total-view-cart">4,800,000₫</td>
                   </tr>
                   <tr>
-                    <td class="distance-td"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td class="distance-td" style="padding-right: 10px;"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
                     <td><a href="checkout.html" class="linktocheckout button dark">Thanh toán</a></td>
                   </tr>
                 </tbody>
@@ -236,9 +201,10 @@
       </div>
 
       <div class="icon-ol">
-        <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip">
+        <a href="#" uk-toggle="target: #offcanvas-flip">
           <i class="fas fa-search" style="color: black"></i>
         </a>
+
         <div class="user-dropdown">
           <a style="color: #272727" href="#">
             <i class="fas fa-user-alt"></i>
@@ -248,6 +214,7 @@
             <a href="signup.html">Đăng ký</a>
           </div>
         </div>
+        
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
           <i class="fas fa-shopping-cart"></i>
         </a>

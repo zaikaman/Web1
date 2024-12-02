@@ -116,8 +116,7 @@
         </div>
       </div>
       <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="    background: white;
-            width: 350px;">
+        <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
 
           <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
 
@@ -128,15 +127,14 @@
                 font-weight: 500; letter-spacing: 2px;">Tìm kiếm</h3>
           <div class="search-box wpo-wrapper-search">
             <form action="search" class="searchform searchform-categoris ultimate-search">
-              <div class="wpo-search-inner" style="display:inline">
-                <input type="hidden" name="type" value="product">
+              <div class="wpo-search-inner" style="display:flex; align-items:center;">
                 <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
                   class="searchinput input-search search-input" type="text" size="20"
                   placeholder="Tìm kiếm sản phẩm...">
+                <a href="search-result.html" id="search-header-btn" style="margin-left:5px; background: transparent; border: none; transition: all 0.3s ease;">
+                  <i class="fas fa-search" style="font-size: 18px; color: #272727; padding: 8px; border-radius: 50%;"></i>
+                </a>
               </div>
-              <button type="submit" class="btn-search btn" id="search-header-btn">
-                <i style="font-weight:bold" class="fas fa-search"></i>
-              </button>
             </form>
             <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults" style="display: none">
               <div class="resultsContent"></div>
@@ -182,7 +180,7 @@
                     <td class="text-right" id="total-view-cart">4,800,000₫</td>
                   </tr>
                   <tr>
-                    <td class="distance-td"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td class="distance-td" style="padding-right: 10px;"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
                     <td><a href="checkout.html" class="linktocheckout button dark">Thanh toán</a></td>
                   </tr>
                 </tbody>
@@ -196,6 +194,10 @@
       </div>
 
       <div class="icon-ol">
+        <a href="#" uk-toggle="target: #offcanvas-flip">
+          <i class="fas fa-search" style="color: black"></i>
+        </a>
+
         <div class="user-dropdown">
           <a style="color: #272727" href="#">
             <i class="fas fa-user-alt"></i>
@@ -205,9 +207,6 @@
             <a href="signup.html">Đăng ký</a>
           </div>
         </div>
-        <!-- <a href="#" class="" uk-toggle="target: #offcanvas-flip">
-          <i class="fas fa-search" style="color: black"></i>
-        </a> -->
         
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
           <i class="fas fa-shopping-cart"></i>
@@ -219,7 +218,6 @@
       </div>
     </div>
     </div>
-
   </nav>
   <!-- Owl-Carousel -->
   <div class="owl-carousel owl-theme owl-carousel-setting">
@@ -445,14 +443,14 @@
         <div class="row">
           <div class="col-xs-12 col-sm-4 home-banner-pd">
             <div class="block-banner-category">
-              <a href="#" class="link-banner wrap-flex-align flex-column">
+              <a href="nike-product.html" class="link-banner wrap-flex-align flex-column">
                 <div class="fg-image fade-box">
                   <img class="lazyloaded" src="images/shoes/block_home_category1_grande.jpg" alt="Shoes">
                 </div>
                 <figcaption class="caption_banner site-animation">
                   <p>Bộ sưu tập</p>
                   <h2>
-                    Đại sứ thương hiệu
+                    Đại sứ thương hiệu  
                   </h2>
                 </figcaption>
               </a>
@@ -460,7 +458,7 @@
           </div>
           <div class="col-xs-12 col-sm-4 home-banner-pd">
             <div class="block-banner-category">
-              <a href="#" class="link-banner wrap-flex-align flex-column">
+              <a href="nike-product.html" class="link-banner wrap-flex-align flex-column">
                 <div class="fg-image fade-box">
                   <img class="lazyloaded" src="images/shoes/block_home_category2_grande.jpg" alt="Shoes">
                 </div>
@@ -475,7 +473,7 @@
           </div>
           <div class="col-xs-12 col-sm-4 home-banner-pd">
             <div class="block-banner-category">
-              <a href="#" class="link-banner wrap-flex-align flex-column">
+              <a href="blog.html" class="link-banner wrap-flex-align flex-column">
                 <div class="fg-image">
                   <img class="lazyloaded" src="images/shoes/block_home_category3_grande.jpg" alt="Shoes">
                 </div>
@@ -687,7 +685,7 @@
             <div class="col-md-4">
               <div class="post_item">
                 <div class="post_featured">
-                  <a href="#" title="Adidas EQT Cushion ADV">
+                  <a href="detailblog.html" title="Adidas EQT Cushion ADV">
                     <img class="img-resize" style="padding-bottom:15px;" src="images/shoes/new-1.jpg"
                       alt="Adidas Falcon nổi bật mùa Hè với phối màu color block">
                   </a>
@@ -702,7 +700,7 @@
                 <div class="pro-text">
                   <h3 class="post_title">
                     <a style=" color: black;
-                                  font-size: 18px;text-decoration: none;" href="#" inspiration pack>
+                                  font-size: 18px;text-decoration: none;" href="detailblog.html" inspiration pack>
                       Adidas Falcon nổi bật mùa Hè với phối màu color block
                     </a>
                   </h3>
@@ -716,7 +714,7 @@
             <div class="col-md-4">
               <div class="post_item">
                 <div class="post_featured">
-                  <a href="#" title="Adidas EQT Cushion ADV">
+                  <a href="detailblog.html" title="Adidas EQT Cushion ADV">
                     <img class="img-resize" style="padding-bottom:15px;" src="images/shoes/new-2.jpg"
                       alt="Saucony hồi sinh mẫu giày chạy bộ cổ điển của mình – Aya Runner">
                   </a>
@@ -731,7 +729,7 @@
                 <div class="pro-text">
                   <h3 class="post_title">
                     <a style=" color: black;
-                                                  font-size: 18px;text-decoration: none;" href="#" inspiration pack>
+                                                  font-size: 18px;text-decoration: none;" href="detailblog.html" inspiration pack>
                       Saucony hồi sinh mẫu giày chạy bộ cổ điển của mình – Aya Runner
                     </a>
                   </h3>
@@ -746,7 +744,7 @@
             <div class="col-md-4">
               <div class="post_item">
                 <div class="post_featured">
-                  <a href="#" title="Adidas EQT Cushion ADV">
+                  <a href="detailblog.html" title="Adidas EQT Cushion ADV">
                     <img class="img-resize" style="padding-bottom:15px;" src="images/shoes/new-3.jpg"
                       alt="Nike Vapormax Plus trở lại với sắc tím mộng mơ và thiết kế chuyển màu đẹp mắt">
                   </a>
@@ -761,7 +759,7 @@
                 <div class="pro-text">
                   <h3 class="post_title">
                     <a style=" color: black;
-                                      font-size: 18px;text-decoration: none;" href="#" inspiration pack>
+                                      font-size: 18px;text-decoration: none;" href="detailblog.html" inspiration pack>
                       Nike Vapormax Plus trở lại với sắc tím mộng mơ và thiết kế chuyển màu đẹp mắt
                     </a>
                   </h3>

@@ -78,21 +78,28 @@
       </div>
 
       <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="background: white;
-            width: 350px;">
+        <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
 
           <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
 
-          <h3 style="font-size: 14px; color: #272727; text-transform: uppercase; margin: 3px 0 30px 0; font-weight: 500; letter-spacing: 2px;">
-            Tìm kiếm
-          </h3>
+          <h3 style="font-size: 14px;
+                color: #272727;
+                text-transform: uppercase;
+                margin: 3px 0 30px 0;
+                font-weight: 500; letter-spacing: 2px;">Tìm kiếm</h3>
           <div class="search-box wpo-wrapper-search">
-            <div class="wpo-search-inner">
-              <input type="text" 
-                     id="nav-search-input"
-                     class="searchinput input-search search-input" 
-                     placeholder="Tìm kiếm sản phẩm..."
-                     autocomplete="off">
+            <form action="search" class="searchform searchform-categoris ultimate-search">
+              <div class="wpo-search-inner" style="display:flex; align-items:center;">
+                <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
+                  class="searchinput input-search search-input" type="text" size="20"
+                  placeholder="Tìm kiếm sản phẩm...">
+                <a href="search-result.html" id="search-header-btn" style="margin-left:5px; background: transparent; border: none; transition: all 0.3s ease;">
+                  <i class="fas fa-search" style="font-size: 18px; color: #272727; padding: 8px; border-radius: 50%;"></i>
+                </a>
+              </div>
+            </form>
+            <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults" style="display: none">
+              <div class="resultsContent"></div>
             </div>
           </div>
         </div>
@@ -135,7 +142,7 @@
                     <td class="text-right" id="total-view-cart">3,600,000₫</td>
                   </tr>
                   <tr>
-                    <td class="distance-td"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td class="distance-td" style="padding-right: 10px;"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
                     <td><a href="checkout.html" class="linktocheckout button dark">Thanh toán</a></td>
                   </tr>
                 </tbody>
@@ -146,6 +153,10 @@
       </div>
 
       <div class="icon-ol">
+        <a href="#" uk-toggle="target: #offcanvas-flip">
+          <i class="fas fa-search" style="color: black"></i>
+        </a>
+
         <div class="user-dropdown">
           <a style="color: #272727" href="#">
             <i class="fas fa-user-alt"></i>
@@ -155,6 +166,7 @@
             <a href="signup.html">Đăng ký</a>
           </div>
         </div>
+        
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
           <i class="fas fa-shopping-cart"></i>
         </a>
@@ -172,6 +184,26 @@
       <img src="images/collection_banner.jpg" alt="Products">
     </div>
   </div>
+
+  <!-- Breadcrumb -->
+  <section class="bread-crumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.html">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Nike
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!--List Product-->
   <div class="container">
@@ -207,6 +239,12 @@
                 <option value="price-desc" class="select-option">Giá giảm dần</option>
               </select>
             </div>
+          </div>
+
+          <div class="filter-group">
+            <a href="search-result.html" class="btn btn-primary w-100" style="color: white;">
+              Tìm kiếm
+            </a>
           </div>
         </div>
       </div>

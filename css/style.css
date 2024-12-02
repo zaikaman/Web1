@@ -3039,7 +3039,7 @@ div.item:hover {
 .user-dropdown {
   position: relative;
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 0px;
 }
 
 .user-dropdown i {

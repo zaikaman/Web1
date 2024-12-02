@@ -4,15 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-
   <link rel="stylesheet" href="css/style.css">
-
   <link rel="stylesheet" href="plugins/fontawesome/all.css">
-
   <link rel="stylesheet" href="plugins/uikit/uikit.min.css">
-
+  <link rel="stylesheet" href="plugins/animate/animate.min.css">
+  <link rel="stylesheet" href="plugins/webfonts/font.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Giới thiệu</title>
 
 </head>
@@ -114,8 +114,7 @@
         </div>
       </div>
       <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="    background: white;
-            width: 350px;">
+        <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
 
           <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
 
@@ -126,21 +125,19 @@
                 font-weight: 500; letter-spacing: 2px;">Tìm kiếm</h3>
           <div class="search-box wpo-wrapper-search">
             <form action="search" class="searchform searchform-categoris ultimate-search">
-              <div class="wpo-search-inner" style="display:inline">
-                <input type="hidden" name="type" value="product">
+              <div class="wpo-search-inner" style="display:flex; align-items:center;">
                 <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
                   class="searchinput input-search search-input" type="text" size="20"
                   placeholder="Tìm kiếm sản phẩm...">
+                <a href="search-result.html" id="search-header-btn" style="margin-left:5px; background: transparent; border: none; transition: all 0.3s ease;">
+                  <i class="fas fa-search" style="font-size: 18px; color: #272727; padding: 8px; border-radius: 50%;"></i>
+                </a>
               </div>
-              <button type="submit" class="btn-search btn" id="search-header-btn">
-                <i style="font-weight:bold" class="fas fa-search"></i>
-              </button>
             </form>
             <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults" style="display: none">
               <div class="resultsContent"></div>
             </div>
-          </div>  
-
+          </div>
         </div>
       </div>
       <div id="offcanvas-flip2" uk-offcanvas="flip: true; overlay: true">
@@ -181,7 +178,7 @@
                     <td class="text-right" id="total-view-cart">4,800,000₫</td>
                   </tr>
                   <tr>
-                    <td class="distance-td"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td class="distance-td" style="padding-right: 10px;"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
                     <td><a href="checkout.html" class="linktocheckout button dark">Thanh toán</a></td>
                   </tr>
                 </tbody>
@@ -194,9 +191,10 @@
         </div>
       </div>
       <div class="icon-ol">
-        <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip">
+        <a href="#" uk-toggle="target: #offcanvas-flip">
           <i class="fas fa-search" style="color: black"></i>
         </a>
+
         <div class="user-dropdown">
           <a style="color: #272727" href="#">
             <i class="fas fa-user-alt"></i>
@@ -206,6 +204,7 @@
             <a href="signup.html">Đăng ký</a>
           </div>
         </div>
+        
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
           <i class="fas fa-shopping-cart"></i>
         </a>
@@ -256,18 +255,17 @@
                 <div class="layered layered-category">
                     <div class="layered-content">
                         <ul class="menuList-links">
-                          <li class=""><a href="index.html" title="Trang chủ"><span>Trang chủ</span></a></li>       
-                          <li class=""><a href="product.html" title="Bộ sưu tập"><span>Bộ sưu tập</span></a></li>
+                          <li class=""><a href="index.html" title="Trang chủ"><span>Trang chủ</span></a></li>
                           <li class="has-submenu level0 ">
-                              <a title="Sản phẩm" >Sản phẩm <span class="icon-plus-submenu" data-toggle="collapse"
+                              <a title="Sản phẩm" >Thương hiệu <span class="icon-plus-submenu" data-toggle="collapse"
                                   href="#collapseExample" role="button" aria-expanded="false"
                                   aria-controls="collapseExample"></span></a>
                               <div class="collapse" id="collapseExample">
                                 <div class="card card-body" style="border:0">
                                   <ul class="menu-product">
-                                    <li><a href="detailproduct.html?id=1" title="Nike Air Max 90 Essential 'Grape'">Nike Air Max 90 Essential 'Grape'</a></li>
-                                    <li><a href="detailproduct.html?id=2" title="Adidas EQT Cushion ADV">Adidas EQT Cushion ADV</a></li>
-                                    <li><a href="detailproduct.html?id=3" title="Nike Air Max 97 Premium">Nike Air Max 97 Premium</a></li>
+                                    <li><a href="nike-product.html" title="Nike">Nike</a></li>
+                                    <li><a href="adidas-product.html" title="Adidas">Adidas</a></li>
+                                    <li><a href="converse-product.html" title="Converse">Converse</a></li>
                                   </ul>
                                 </div>
                               </div>
