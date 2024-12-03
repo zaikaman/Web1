@@ -2798,6 +2798,10 @@ label[for="product-select-option-2"] {
 .icon-pr-fix {
   transition: all 300ms linear;
 }
+.owl-product-gallery-slide {
+  max-width: 600px;
+  margin: 0 auto;
+}
 .quantity-area button.qty-btn {
   float: left;
   background: #f3f4f4;
