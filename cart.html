@@ -78,14 +78,34 @@
                   <td>4,800,000₫</td>
                   <td>
                     <div class="quantity-area clearfix">
-                      <input type="button" value="-" class="qty-btn">
-                      <input type="text" value="1" class="quantity-selector">
-                      <input type="button" value="+" class="qty-btn">
+                      <input type="button" value="-" class="qty-btn" onclick="decreaseQuantity(this)">
+                      <input type="text" value="1" class="quantity-selector" readonly>
+                      <input type="button" value="+" class="qty-btn" onclick="increaseQuantity(this)">
                     </div>
+                    <script>
+                      function decreaseQuantity(btn) {
+                        let input = btn.parentElement.querySelector('.quantity-selector');
+                        let value = parseInt(input.value);
+                        if(value > 1) {
+                          input.value = value - 1;
+                        }
+                      }
+                      
+                      function increaseQuantity(btn) {
+                        let input = btn.parentElement.querySelector('.quantity-selector');
+                        let value = parseInt(input.value);
+                        input.value = value + 1;
+                      }
+                    </script>
                   </td>
                   <td>4,800,000₫</td>
                   <td>
-                    <a href="#" class="remove-item"><i class="fas fa-times"></i></a>
+                    <a href="#" class="remove-item" onclick="removeItem(this); return false;"><i class="fas fa-times"></i></a>
+                    <script>
+                      function removeItem(element) {
+                        alert('Đã xóa sản phẩm khỏi giỏ hàng!');
+                      }
+                    </script>
                   </td>
                 </tr>
               </tbody>
