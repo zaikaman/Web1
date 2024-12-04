@@ -116,8 +116,7 @@
         </div>
       </div>
       <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="    background: white;
-            width: 350px;">
+        <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
 
           <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
 
@@ -128,15 +127,14 @@
                 font-weight: 500; letter-spacing: 2px;">Tìm kiếm</h3>
           <div class="search-box wpo-wrapper-search">
             <form action="search" class="searchform searchform-categoris ultimate-search">
-              <div class="wpo-search-inner" style="display:inline">
-                <input type="hidden" name="type" value="product">
+              <div class="wpo-search-inner" style="display:flex; align-items:center;">
                 <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
                   class="searchinput input-search search-input" type="text" size="20"
                   placeholder="Tìm kiếm sản phẩm...">
+                <a href="search-result.html" id="search-header-btn" style="margin-left:5px; background: transparent; border: none; transition: all 0.3s ease;">
+                  <i class="fas fa-search" style="font-size: 18px; color: #272727; padding: 8px; border-radius: 50%;"></i>
+                </a>
               </div>
-              <button type="submit" class="btn-search btn" id="search-header-btn">
-                <i style="font-weight:bold" class="fas fa-search"></i>
-              </button>
             </form>
             <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults" style="display: none">
               <div class="resultsContent"></div>
@@ -182,7 +180,7 @@
                     <td class="text-right" id="total-view-cart">4,800,000₫</td>
                   </tr>
                   <tr>
-                    <td class="distance-td"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td class="distance-td" style="padding-right: 10px;"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
                     <td><a href="checkout.html" class="linktocheckout button dark">Thanh toán</a></td>
                   </tr>
                 </tbody>
@@ -196,6 +194,10 @@
       </div>
 
       <div class="icon-ol">
+        <a href="#" uk-toggle="target: #offcanvas-flip">
+          <i class="fas fa-search" style="color: black"></i>
+        </a>
+
         <div class="user-dropdown">
           <a style="color: #272727" href="#">
             <i class="fas fa-user-alt"></i>
@@ -205,9 +207,6 @@
             <a href="signup.html">Đăng ký</a>
           </div>
         </div>
-        <!-- <a href="#" class="" uk-toggle="target: #offcanvas-flip">
-          <i class="fas fa-search" style="color: black"></i>
-        </a> -->
         
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
           <i class="fas fa-shopping-cart"></i>
@@ -219,7 +218,6 @@
       </div>
     </div>
     </div>
-
   </nav>
   <!-- Owl-Carousel -->
   <div class="owl-carousel owl-theme owl-carousel-setting">
@@ -246,7 +244,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6 col-6">
           <div class="product-block">
             <div class="product-img fade-box">
-              <a href="product-detail/Nike/1.html" title="Nike Air Max 90" class="img-resize">
+              <a href="detailproduct.html" title="Nike Air Max 90" class="img-resize">
                 <img src="images/shoes/1.jpg"
                   alt="Nike Air Max 90" class="lazyloaded">
                 <img src="images/shoes/1-1.jpg" alt="Nike Air Max 90" class="lazyloaded">
@@ -256,7 +254,7 @@
             <div class="product-detail clearfix">
               <div class="pro-text">
                 <a style=" color: black;
-                                                  font-size: 14px;text-decoration: none;" href="product-detail/Nike/1.html"
+                                                  font-size: 14px;text-decoration: none;" href="detailproduct.html"
                   title="Nike Air Max 90" inspiration pack>
                   Nike Air Max 90
                 </a>
@@ -270,7 +268,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6 col-6">
           <div class="product-block">
             <div class="product-img fade-box">
-              <a href="product-detail/Nike/2.html" title="Nike Air Force 1" class="img-resize">
+              <a href="detailproduct.html" title="Nike Air Force 1" class="img-resize">
                 <img src="images/shoes/2.jpg" alt="Nike Air Force 1"
                   class="lazyloaded">
                 <img src="images/shoes/2-2.jpg" alt="Nike Air Force 1" class="lazyloaded">
@@ -280,7 +278,7 @@
             <div class="product-detail clearfix">
               <div class="pro-text">
                 <a style=" color: black;
-                                          font-size: 14px;text-decoration: none;" title="Nike Air Force 1" href="product-detail/Nike/2.html">
+                                          font-size: 14px;text-decoration: none;" title="Nike Air Force 1" href="detailproduct.html">
                   Nike Air Force 1
                 </a>
               </div>
@@ -293,7 +291,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6 col-6">
           <div class="product-block">
             <div class="product-img fade-box">
-              <a href="product-detail/Nike/3.html" title="Nike React Element" class="img-resize">
+              <a href="detailproduct.html" title="Nike React Element" class="img-resize">
                 <img src="images/shoes/3.jpg"
                   alt="Nike React Element" class="lazyloaded">
                 <img src="images/shoes/3-3.jpg" alt="Nike React Element" class="lazyloaded">
@@ -303,7 +301,7 @@
             <div class="product-detail clearfix">
               <div class="pro-text">
                 <a style=" color: black;
-                            font-size: 14px;text-decoration: none;" href="product-detail/Nike/3.html" title="Nike React Element" inspiration
+                            font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike React Element" inspiration
                   pack>
                   Nike React Element
                 </a>
@@ -317,7 +315,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6 col-6">
           <div class="product-block">
             <div class="product-img fade-box">
-              <a href="product-detail/Nike/4.html" title="Nike Zoom Pegasus" class="img-resize">
+              <a href="detailproduct.html" title="Nike Zoom Pegasus" class="img-resize">
                 <img src="images/shoes/4.jpg" alt="Nike Zoom Pegasus"
                   class="lazyloaded">
                 <img src="images/shoes/4-4.jpg" alt="Nike Zoom Pegasus" class="lazyloaded">
@@ -327,7 +325,7 @@
             <div class="product-detail clearfix">
               <div class="pro-text">
                 <a style=" color: black;
-                       font-size: 14px;text-decoration: none;" href="product-detail/Nike/4.html" title="Nike Zoom Pegasus" inspiration pack>
+                       font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike Zoom Pegasus" inspiration pack>
                   Nike Zoom Pegasus 
                 </a>
               </div>
@@ -342,7 +340,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6 col-6">
           <div class="product-block">
             <div class="product-img fade-box">
-              <a href="product-detail/Nike/5.html" title="Nike Joyride Run" class="img-resize">
+              <a href="detailproduct.html" title="Nike Joyride Run" class="img-resize">
                 <img class="lazyloaded" src="images/shoes/5.jpg"
                   alt="Nike Joyride Run">
                 <img class="lazyloaded" src="images/shoes/5-5.jpg" alt="Nike Joyride Run">
@@ -352,7 +350,7 @@
             <div class="product-detail clearfix">
               <div class="pro-text">  
                 <a style=" color: black;
-                      font-size: 14px;text-decoration: none;" href="product-detail/Nike/5.html" title="Nike Joyride Run" inspiration
+                      font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike Joyride Run" inspiration
                   pack>
 
                   Nike Joyride Run
@@ -368,7 +366,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6 col-6">
           <div class="product-block">
             <div class="product-img fade-box">
-              <a href="product-detail/Nike/6.html" title="Nike Free RN" class="img-resize">
+              <a href="detailproduct.html" title="Nike Free RN" class="img-resize">
                 <img class="lazyloaded" src="images/shoes/6.jpg"
                   alt="Nike Free RN">
                 <img class="lazyloaded" src="images/shoes/6-6.jpg" alt="Nike Free RN">
@@ -378,7 +376,7 @@
             <div class="product-detail clearfix">
               <div class="pro-text">
                 <a style=" color: black;
-                      font-size: 14px;text-decoration: none;" href="product-detail/Nike/6.html">
+                      font-size: 14px;text-decoration: none;" href="detailproduct.html">
                   Nike Free RN
                 </a>
               </div>
@@ -391,7 +389,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6 col-6">
           <div class="product-block">
             <div class="product-img fade-box">
-              <a href="product-detail/Nike/7.html" title="Nike Metcon" class="img-resize">
+              <a href="detailproduct.html" title="Nike Metcon" class="img-resize">
                 <img class="lazyloaded" src="images/shoes/7.jpg"
                   alt="Nike Metcon">
                 <img class="lazyloaded" src="images/shoes/7-7.jpg" alt="Nike Metcon">
@@ -401,7 +399,7 @@
             <div class="product-detail clearfix">
               <div class="pro-text">
                 <a style=" color: black;
-                      font-size: 14px;text-decoration: none;" href="product-detail/Nike/7.html" title="Nike Metcon" inspiration pack>
+                      font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike Metcon" inspiration pack>
                   Nike Metcon
                 </a>
               </div>
@@ -414,7 +412,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6 col-6">
           <div class="product-block">
             <div class="product-img fade-box">
-              <a href="product-detail/Nike/8.html" title="Nike Zoom Fly" class="img-resize">
+              <a href="detailproduct.html" title="Nike Zoom Fly" class="img-resize">
                 <img class="lazyloaded" src="images/shoes/8.jpg"
                   alt="Nike Zoom Fly">
                 <img class="lazyloaded" src="images/shoes/8-8.jpg" alt="Nike Zoom Fly">
@@ -424,7 +422,7 @@
             <div class="product-detail clearfix">
               <div class="pro-text">
                 <a style=" color: black;
-                       font-size: 14px;text-decoration: none;" href="product-detail/Nike/8.html" title="Nike Zoom Fly" inspiration
+                       font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike Zoom Fly" inspiration
                   pack>
                   Nike Zoom Fly
                 </a>
@@ -445,14 +443,14 @@
         <div class="row">
           <div class="col-xs-12 col-sm-4 home-banner-pd">
             <div class="block-banner-category">
-              <a href="#" class="link-banner wrap-flex-align flex-column">
+              <a href="nike-product.html" class="link-banner wrap-flex-align flex-column">
                 <div class="fg-image fade-box">
                   <img class="lazyloaded" src="images/shoes/block_home_category1_grande.jpg" alt="Shoes">
                 </div>
                 <figcaption class="caption_banner site-animation">
                   <p>Bộ sưu tập</p>
                   <h2>
-                    Đại sứ thương hiệu
+                    Đại sứ thương hiệu  
                   </h2>
                 </figcaption>
               </a>
@@ -460,7 +458,7 @@
           </div>
           <div class="col-xs-12 col-sm-4 home-banner-pd">
             <div class="block-banner-category">
-              <a href="#" class="link-banner wrap-flex-align flex-column">
+              <a href="nike-product.html" class="link-banner wrap-flex-align flex-column">
                 <div class="fg-image fade-box">
                   <img class="lazyloaded" src="images/shoes/block_home_category2_grande.jpg" alt="Shoes">
                 </div>
@@ -475,7 +473,7 @@
           </div>
           <div class="col-xs-12 col-sm-4 home-banner-pd">
             <div class="block-banner-category">
-              <a href="#" class="link-banner wrap-flex-align flex-column">
+              <a href="blog.html" class="link-banner wrap-flex-align flex-column">
                 <div class="fg-image">
                   <img class="lazyloaded" src="images/shoes/block_home_category3_grande.jpg" alt="Shoes">
                 </div>
@@ -512,7 +510,7 @@
             <div class="">
               <div class="product-block">
                 <div class="product-img fade-box">
-                  <a href="product-detail/Nike/1.html" title="Nike Air Max 90" class="img-resize">
+                  <a href="detailproduct.html" title="Nike Air Max 90" class="img-resize">
                     <img src="images/shoes/1.jpg" alt="Nike Air Max 90"
                       class="lazyloaded">
                     <img src="images/shoes/1-1.jpg" alt="Nike Air Max 90" class="lazyloaded">
@@ -522,7 +520,7 @@
                 <div class="product-detail clearfix">
                   <div class="pro-text">
                     <a style=" color: black;
-                            font-size: 14px;text-decoration: none;" href="product-detail/Nike/1.html" title="Nike Air Max 90" inspiration pack>
+                            font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike Air Max 90" inspiration pack>
                       Nike Air Max 90
                     </a>
                   </div>
@@ -537,7 +535,7 @@
             <div class="">
               <div class="product-block">
                 <div class="product-img fade-box">
-                  <a href="product-detail/Nike/2.html" title="Nike Air Force 1" class="img-resize">
+                  <a href="detailproduct.html" title="Nike Air Force 1" class="img-resize">
                     <img src="images/shoes/2.jpg" alt="Nike Air Force 1"
                       class="lazyloaded">
                     <img src="images/shoes/2-2.jpg" alt="Nike Air Force 1" class="lazyloaded">
@@ -547,7 +545,7 @@
                 <div class="product-detail clearfix">
                   <div class="pro-text">
                     <a style=" color: black;
-                           font-size: 14px;text-decoration: none;" href="product-detail/Nike/2.html" title="Nike Air Force 1" inspiration pack>
+                           font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike Air Force 1" inspiration pack>
                       Nike Air Force 1
                     </a>
                   </div>
@@ -562,7 +560,7 @@
             <div class="">
               <div class="product-block">
                 <div class="product-img fade-box">
-                  <a href="product-detail/Nike/3.html" title="Nike React Element" class="img-resize">
+                  <a href="detailproduct.html" title="Nike React Element" class="img-resize">
                     <img src="images/shoes/3.jpg" alt="Nike React Element"
                       class="lazyloaded">
                     <img src="images/shoes/3-3.jpg" alt="Nike React Element" class="lazyloaded">
@@ -572,7 +570,7 @@
                 <div class="product-detail clearfix">
                   <div class="pro-text">
                     <a style=" color: black;
-                           font-size: 14px;text-decoration: none;" href="product-detail/Nike/3.html" title="Nike React Element" inspiration pack>
+                           font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike React Element" inspiration pack>
                       Nike React Element
                     </a>
                   </div>
@@ -587,7 +585,7 @@
             <div class="">
               <div class="product-block">
                 <div class="product-img fade-box">
-                  <a href="product-detail/Nike/4.html" title="Nike Zoom Pegasus" class="img-resize">
+                  <a href="detailproduct.html" title="Nike Zoom Pegasus" class="img-resize">
                     <img src="images/shoes/4.jpg" alt="Nike Zoom Pegasus"
                       class="lazyloaded">
                     <img src="images/shoes/4-4.jpg" alt="Nike Zoom Pegasus" class="lazyloaded">
@@ -597,7 +595,7 @@
                 <div class="product-detail clearfix">
                   <div class="pro-text">
                     <a style=" color: black;
-                           font-size: 14px;text-decoration: none;" href="product-detail/Nike/4.html" title="Nike Zoom Pegasus" inspiration pack>
+                           font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike Zoom Pegasus" inspiration pack>
                       Nike Zoom Pegasus
                     </a>
                   </div>
@@ -612,7 +610,7 @@
             <div class="">
               <div class="product-block">
                 <div class="product-img fade-box">
-                  <a href="product-detail/Nike/5.html" title="Nike Joyride Run" class="img-resize">
+                  <a href="detailproduct.html" title="Nike Joyride Run" class="img-resize">
                     <img src="images/shoes/5.jpg" alt="Nike Joyride Run"
                       class="lazyloaded">
                     <img src="images/shoes/5-5.jpg" alt="Nike Joyride Run" class="lazyloaded">
@@ -622,7 +620,7 @@
                 <div class="product-detail clearfix">
                   <div class="pro-text">
                     <a style=" color: black;
-                           font-size: 14px;text-decoration: none;" href="product-detail/Nike/5.html" title="Nike Airmax 97 Blue Hero" inspiration pack>
+                           font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike Airmax 97 Blue Hero" inspiration pack>
                       Nike Joyride Run
                     </a>
                   </div>
@@ -637,7 +635,7 @@
             <div class="">
               <div class="product-block">
                 <div class="product-img fade-box">
-                  <a href="product-detail/Nike/6.html" title="Nike Free RN" class="img-resize">
+                  <a href="detailproduct.html" title="Nike Free RN" class="img-resize">
                     <img src="images/shoes/6.jpg" alt="Nike Free RN"
                       class="lazyloaded">
                     <img src="images/shoes/6-6.jpg" alt="Nike Free RN" class="lazyloaded">
@@ -647,7 +645,7 @@
                 <div class="product-detail clearfix">
                   <div class="pro-text">
                     <a style=" color: black;
-                           font-size: 14px;text-decoration: none;" href="product-detail/Nike/6.html" title="Nike Free RN" inspiration pack>
+                           font-size: 14px;text-decoration: none;" href="detailproduct.html" title="Nike Free RN" inspiration pack>
                       Nike Free RN
                     </a>
                   </div>
@@ -687,7 +685,7 @@
             <div class="col-md-4">
               <div class="post_item">
                 <div class="post_featured">
-                  <a href="#" title="Adidas EQT Cushion ADV">
+                  <a href="detailblog.html" title="Adidas EQT Cushion ADV">
                     <img class="img-resize" style="padding-bottom:15px;" src="images/shoes/new-1.jpg"
                       alt="Adidas Falcon nổi bật mùa Hè với phối màu color block">
                   </a>
@@ -702,7 +700,7 @@
                 <div class="pro-text">
                   <h3 class="post_title">
                     <a style=" color: black;
-                                  font-size: 18px;text-decoration: none;" href="#" inspiration pack>
+                                  font-size: 18px;text-decoration: none;" href="detailblog.html" inspiration pack>
                       Adidas Falcon nổi bật mùa Hè với phối màu color block
                     </a>
                   </h3>
@@ -716,7 +714,7 @@
             <div class="col-md-4">
               <div class="post_item">
                 <div class="post_featured">
-                  <a href="#" title="Adidas EQT Cushion ADV">
+                  <a href="detailblog.html" title="Adidas EQT Cushion ADV">
                     <img class="img-resize" style="padding-bottom:15px;" src="images/shoes/new-2.jpg"
                       alt="Saucony hồi sinh mẫu giày chạy bộ cổ điển của mình – Aya Runner">
                   </a>
@@ -731,7 +729,7 @@
                 <div class="pro-text">
                   <h3 class="post_title">
                     <a style=" color: black;
-                                                  font-size: 18px;text-decoration: none;" href="#" inspiration pack>
+                                                  font-size: 18px;text-decoration: none;" href="detailblog.html" inspiration pack>
                       Saucony hồi sinh mẫu giày chạy bộ cổ điển của mình – Aya Runner
                     </a>
                   </h3>
@@ -746,7 +744,7 @@
             <div class="col-md-4">
               <div class="post_item">
                 <div class="post_featured">
-                  <a href="#" title="Adidas EQT Cushion ADV">
+                  <a href="detailblog.html" title="Adidas EQT Cushion ADV">
                     <img class="img-resize" style="padding-bottom:15px;" src="images/shoes/new-3.jpg"
                       alt="Nike Vapormax Plus trở lại với sắc tím mộng mơ và thiết kế chuyển màu đẹp mắt">
                   </a>
@@ -761,7 +759,7 @@
                 <div class="pro-text">
                   <h3 class="post_title">
                     <a style=" color: black;
-                                      font-size: 18px;text-decoration: none;" href="#" inspiration pack>
+                                      font-size: 18px;text-decoration: none;" href="detailblog.html" inspiration pack>
                       Nike Vapormax Plus trở lại với sắc tím mộng mơ và thiết kế chuyển màu đẹp mắt
                     </a>
                   </h3>

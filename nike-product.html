@@ -77,21 +77,28 @@
         </ul>
       </div>
       <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="background: white;
-            width: 350px;">
+        <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
 
           <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
 
-          <h3 style="font-size: 14px; color: #272727; text-transform: uppercase; margin: 3px 0 30px 0; font-weight: 500; letter-spacing: 2px;">
-            Tìm kiếm
-          </h3>
+          <h3 style="font-size: 14px;
+                color: #272727;
+                text-transform: uppercase;
+                margin: 3px 0 30px 0;
+                font-weight: 500; letter-spacing: 2px;">Tìm kiếm</h3>
           <div class="search-box wpo-wrapper-search">
-            <div class="wpo-search-inner">
-              <input type="text" 
-                     id="nav-search-input"
-                     class="searchinput input-search search-input" 
-                     placeholder="Tìm kiếm sản phẩm..."
-                     autocomplete="off">
+            <form action="search" class="searchform searchform-categoris ultimate-search">
+              <div class="wpo-search-inner" style="display:flex; align-items:center;">
+                <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
+                  class="searchinput input-search search-input" type="text" size="20"
+                  placeholder="Tìm kiếm sản phẩm...">
+                <a href="search-result.html" id="search-header-btn" style="margin-left:5px; background: transparent; border: none; transition: all 0.3s ease;">
+                  <i class="fas fa-search" style="font-size: 18px; color: #272727; padding: 8px; border-radius: 50%;"></i>
+                </a>
+              </div>
+            </form>
+            <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults" style="display: none">
+              <div class="resultsContent"></div>
             </div>
           </div>
         </div>
@@ -133,7 +140,7 @@
                     <td class="text-right" id="total-view-cart">3,600,000₫</td>
                   </tr>
                   <tr>
-                    <td class="distance-td"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td class="distance-td" style="padding-right: 10px;"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
                     <td><a href="checkout.html" class="linktocheckout button dark">Thanh toán</a></td>
                   </tr>
                 </tbody>
@@ -144,6 +151,10 @@
       </div>
 
       <div class="icon-ol">
+        <a href="#" uk-toggle="target: #offcanvas-flip">
+          <i class="fas fa-search" style="color: black"></i>
+        </a>
+
         <div class="user-dropdown">
           <a style="color: #272727" href="#">
             <i class="fas fa-user-alt"></i>
@@ -153,6 +164,7 @@
             <a href="signup.html">Đăng ký</a>
           </div>
         </div>
+        
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
           <i class="fas fa-shopping-cart"></i>
         </a>
@@ -170,6 +182,26 @@
       <img src="images/collection_banner.jpg" alt="Products">
     </div>
   </div>
+
+  <!-- Breadcrumb -->
+  <section class="bread-crumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.html">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Nike
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!--List Product-->
   <div class="container">
@@ -206,6 +238,12 @@
               </select>
             </div>
           </div>
+
+          <div class="filter-group">
+            <a href="search-result.html" class="btn btn-primary w-100" style="color: white;">
+              Tìm kiếm
+            </a>
+          </div>
         </div>
       </div>
 
@@ -217,7 +255,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Nike/1.html" title="Nike Air Max 90" class="img-resize">
+                <a href="detailproduct.html" title="Nike Air Max 90" class="img-resize">
                   <img src="images/shoes/1.jpg" alt="Nike Air Max 90" class="lazyloaded">
                   <img src="images/shoes/1-1.jpg" alt="Nike Air Max 90" class="lazyloaded">
                 </a>
@@ -225,7 +263,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Nike/1.html" title="Nike Air Max 90">
+                     href="detailproduct.html" title="Nike Air Max 90">
                     Nike Air Max 90
                   </a>
                 </div>
@@ -240,7 +278,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Nike/2.html" title="Nike Air Force 1" class="img-resize">
+                <a href="detailproduct.html" title="Nike Air Force 1" class="img-resize">
                   <img src="images/shoes/2.jpg" alt="Nike Air Force 1" class="lazyloaded">
                   <img src="images/shoes/2-2.jpg" alt="Nike Air Force 1" class="lazyloaded">
                 </a>
@@ -248,7 +286,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Nike/2.html" title="Nike Air Force 1">
+                     href="detailproduct.html" title="Nike Air Force 1">
                     Nike Air Force 1
                   </a>
                 </div>
@@ -263,7 +301,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Nike/3.html" title="Nike React Element" class="img-resize">
+                <a href="detailproduct.html" title="Nike React Element" class="img-resize">
                   <img src="images/shoes/3.jpg" alt="Nike React Element" class="lazyloaded">
                   <img src="images/shoes/3-3.jpg" alt="Nike React Element" class="lazyloaded">
                 </a>
@@ -271,7 +309,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Nike/3.html" title="Nike React Element">
+                     href="detailproduct.html" title="Nike React Element">
                     Nike React Element
                   </a>
                 </div>
@@ -286,7 +324,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Nike/4.html" title="Nike Zoom Pegasus" class="img-resize">
+                <a href="detailproduct.html" title="Nike Zoom Pegasus" class="img-resize">
                   <img src="images/shoes/4.jpg" alt="Nike Zoom Pegasus" class="lazyloaded">
                   <img src="images/shoes/4-4.jpg" alt="Nike Zoom Pegasus" class="lazyloaded">
                 </a>
@@ -294,7 +332,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Nike/4.html" title="Nike Zoom Pegasus">
+                     href="detailproduct.html" title="Nike Zoom Pegasus">
                     Nike Zoom Pegasus
                   </a>
                 </div>
@@ -309,7 +347,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Nike/5.html" title="Nike Joyride Run" class="img-resize">
+                <a href="detailproduct.html" title="Nike Joyride Run" class="img-resize">
                   <img src="images/shoes/5.jpg" alt="Nike Joyride Run" class="lazyloaded">
                   <img src="images/shoes/5-5.jpg" alt="Nike Joyride Run" class="lazyloaded">
                 </a>
@@ -317,7 +355,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Nike/5.html" title="Nike Joyride Run">
+                     href="detailproduct.html" title="Nike Joyride Run">
                     Nike Joyride Run
                   </a>
                 </div>
@@ -332,7 +370,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Nike/6.html" title="Nike Free RN" class="img-resize">
+                <a href="detailproduct.html" title="Nike Free RN" class="img-resize">
                   <img src="images/shoes/6.jpg" alt="Nike Free RN" class="lazyloaded">
                   <img src="images/shoes/6-6.jpg" alt="Nike Free RN" class="lazyloaded">
                 </a>
@@ -340,7 +378,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Nike/6.html" title="Nike Free RN">
+                     href="detailproduct.html" title="Nike Free RN">
                     Nike Free RN
                   </a>
                 </div>
@@ -355,7 +393,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Nike/7.html" title="Nike Metcon" class="img-resize">
+                <a href="detailproduct.html" title="Nike Metcon" class="img-resize">
                   <img src="images/shoes/7.jpg" alt="Nike Metcon" class="lazyloaded">
                   <img src="images/shoes/7-7.jpg" alt="Nike Metcon" class="lazyloaded">
                 </a>
@@ -363,7 +401,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Nike/7.html" title="Nike Metcon">
+                     href="detailproduct.html" title="Nike Metcon">
                     Nike Metcon
                   </a>
                 </div>
@@ -378,7 +416,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Nike/8.html" title="Nike Zoom Fly" class="img-resize">
+                <a href="detailproduct.html" title="Nike Zoom Fly" class="img-resize">
                   <img src="images/shoes/8.jpg" alt="Nike Zoom Fly" class="lazyloaded">
                   <img src="images/shoes/8-8.jpg" alt="Nike Zoom Fly" class="lazyloaded">
                 </a>
@@ -386,7 +424,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Nike/8.html" title="Nike Zoom Fly">
+                     href="detailproduct.html" title="Nike Zoom Fly">
                     Nike Zoom Fly
                   </a>
                 </div>

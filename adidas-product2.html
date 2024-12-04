@@ -77,21 +77,28 @@
         </ul>
       </div>
       <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="    background: white;
-            width: 350px;">
+        <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
 
           <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
 
-          <h3 style="font-size: 14px; color: #272727; text-transform: uppercase; margin: 3px 0 30px 0; font-weight: 500; letter-spacing: 2px;">
-            Tìm kiếm
-          </h3>
+          <h3 style="font-size: 14px;
+                color: #272727;
+                text-transform: uppercase;
+                margin: 3px 0 30px 0;
+                font-weight: 500; letter-spacing: 2px;">Tìm kiếm</h3>
           <div class="search-box wpo-wrapper-search">
-            <div class="wpo-search-inner">
-              <input type="text" 
-                     id="nav-search-input"
-                     class="searchinput input-search search-input" 
-                     placeholder="Tìm kiếm sản phẩm..."
-                     autocomplete="off">
+            <form action="search" class="searchform searchform-categoris ultimate-search">
+              <div class="wpo-search-inner" style="display:flex; align-items:center;">
+                <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
+                  class="searchinput input-search search-input" type="text" size="20"
+                  placeholder="Tìm kiếm sản phẩm...">
+                <a href="search-result.html" id="search-header-btn" style="margin-left:5px; background: transparent; border: none; transition: all 0.3s ease;">
+                  <i class="fas fa-search" style="font-size: 18px; color: #272727; padding: 8px; border-radius: 50%;"></i>
+                </a>
+              </div>
+            </form>
+            <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults" style="display: none">
+              <div class="resultsContent"></div>
             </div>
           </div>
         </div>
@@ -134,7 +141,7 @@
                     <td class="text-right" id="total-view-cart">4,800,000₫</td>
                   </tr>
                   <tr>
-                    <td class="distance-td"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td class="distance-td" style="padding-right: 10px;"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
                     <td><a href="checkout.html" class="linktocheckout button dark">Thanh toán</a></td>
                   </tr>
                 </tbody>
@@ -148,6 +155,10 @@
       </div>
 
       <div class="icon-ol">
+        <a href="#" uk-toggle="target: #offcanvas-flip">
+          <i class="fas fa-search" style="color: black"></i>
+        </a>
+
         <div class="user-dropdown">
           <a style="color: #272727" href="#">
             <i class="fas fa-user-alt"></i>
@@ -157,9 +168,6 @@
             <a href="signup.html">Đăng ký</a>
           </div>
         </div>
-        <!-- <a href="#" class="" uk-toggle="target: #offcanvas-flip">
-          <i class="fas fa-search" style="color: black"></i>
-        </a> -->
         
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
           <i class="fas fa-shopping-cart"></i>
@@ -235,6 +243,12 @@
               </select>
             </div>
           </div>
+
+          <div class="filter-group">
+            <a href="search-result.html" class="btn btn-primary w-100" style="color: white;">
+              Tìm kiếm
+            </a>
+          </div>
         </div>
       </div>
 
@@ -248,7 +262,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Adidas/9.html" title="Adidas Gazelle" class="img-resize">
+                <a href="detailproduct.html" title="Adidas Gazelle" class="img-resize">
                   <img src="images/Adidas/9.jpg" alt="Adidas Gazelle" class="lazyloaded">
                   <img src="images/Adidas/9-9.jpg" alt="Adidas Gazelle" class="lazyloaded">
                 </a>
@@ -256,7 +270,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Adidas/9.html" title="Adidas Gazelle">
+                     href="detailproduct.html" title="Adidas Gazelle">
                     Adidas Gazelle
                   </a>
                 </div>
@@ -271,7 +285,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Adidas/10.html" title="Adidas 4DFWD" class="img-resize">
+                <a href="detailproduct.html" title="Adidas 4DFWD" class="img-resize">
                   <img src="images/Adidas/10.jpg" alt="Adidas 4DFWD" class="lazyloaded">
                   <img src="images/Adidas/10-10.jpg" alt="Adidas 4DFWD" class="lazyloaded">
                 </a>
@@ -279,7 +293,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Adidas/10.html" title="Adidas 4DFWD">
+                     href="detailproduct.html" title="Adidas 4DFWD">
                     Adidas 4DFWD
                   </a>
                 </div>
@@ -294,7 +308,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Adidas/11.html" title="Adidas Samba Classic" class="img-resize">
+                <a href="detailproduct.html" title="Adidas Samba Classic" class="img-resize">
                   <img src="images/Adidas/11.jpg" alt="Adidas Samba Classic" class="lazyloaded">
                   <img src="images/Adidas/11-11.jpg" alt="Adidas Samba Classic" class="lazyloaded">
                 </a>
@@ -302,7 +316,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Adidas/11.html" title="Adidas Samba Classic">
+                     href="detailproduct.html" title="Adidas Samba Classic">
                     Adidas Samba Classic
                   </a>
                 </div>
@@ -317,7 +331,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Adidas/12.html" title="Adidas Terrex Swift R3" class="img-resize">
+                <a href="detailproduct.html" title="Adidas Terrex Swift R3" class="img-resize">
                   <img src="images/Adidas/12.jpg" alt="Adidas Terrex Swift R3" class="lazyloaded">
                   <img src="images/Adidas/12-12.jpg" alt="Adidas Terrex Swift R3" class="lazyloaded">
                 </a>
@@ -325,7 +339,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Adidas/12.html" title="Adidas Terrex Swift R3">
+                     href="detailproduct.html" title="Adidas Terrex Swift R3">
                     Adidas Terrex Swift R3
                   </a>
                 </div>
@@ -340,7 +354,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Adidas/13.html" title="Adidas Handball Spezial" class="img-resize">
+                <a href="detailproduct.html" title="Adidas Handball Spezial" class="img-resize">
                   <img src="images/Adidas/13.jpg" alt="Adidas Handball Spezial" class="lazyloaded">
                   <img src="images/Adidas/13-13.jpg" alt="Adidas Handball Spezial" class="lazyloaded">
                 </a>
@@ -348,7 +362,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Adidas/13.html" title="Adidas Handball Spezial">
+                     href="detailproduct.html" title="Adidas Handball Spezial">
                     Adidas Handball Spezial
                   </a>
                 </div>
@@ -363,7 +377,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Adidas/14.html" title="Adidas Response CL" class="img-resize">
+                <a href="detailproduct.html" title="Adidas Response CL" class="img-resize">
                   <img src="images/Adidas/14.jpg" alt="Adidas Response CL" class="lazyloaded">
                   <img src="images/Adidas/14-14.jpg" alt="Adidas Response CL" class="lazyloaded">
                 </a>
@@ -371,7 +385,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Adidas/14.html" title="Adidas Response CL">
+                     href="detailproduct.html" title="Adidas Response CL">
                     Adidas Response CL
                   </a>
                 </div>
@@ -386,7 +400,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Adidas/15.html" title="Adidas Dropstep" class="img-resize">
+                <a href="detailproduct.html" title="Adidas Dropstep" class="img-resize">
                   <img src="images/Adidas/15.jpg" alt="Adidas Dropstep" class="lazyloaded">
                   <img src="images/Adidas/15-15.jpg" alt="Adidas Dropstep" class="lazyloaded">
                 </a>
@@ -394,7 +408,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Adidas/15.html" title="Adidas Dropstep">
+                     href="detailproduct.html" title="Adidas Dropstep">
                     Adidas Dropstep
                   </a>
                 </div>
@@ -410,7 +424,7 @@
           <div class="col-md-3 col-sm-6 col-xs-6 col-6">
             <div class="product-block">
               <div class="product-img fade-box">
-                <a href="./product-detail/Adidas/16.html" title="Adidas Supernova" class="img-resize">
+                <a href="detailproduct.html" title="Adidas Supernova" class="img-resize">
                   <img src="images/Adidas/16.jpg" alt="Adidas Supernova" class="lazyloaded">
                   <img src="images/Adidas/16-16.jpg" alt="Adidas Supernova" class="lazyloaded">
                 </a>
@@ -418,7 +432,7 @@
               <div class="product-detail clearfix">
                 <div class="pro-text">
                   <a style="color: black; font-size: 14px;text-decoration: none;" 
-                     href="./product-detail/Adidas/16.html" title="Adidas Supernova">
+                     href="detailproduct.html" title="Adidas Supernova">
                     Adidas Supernova
                   </a>
                 </div>
