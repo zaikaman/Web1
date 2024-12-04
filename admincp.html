@@ -1405,7 +1405,8 @@
                                 <div class="col-md-6">
                                     <h6 class="mb-3">Thông Tin Đơn Hàng</h6>
                                     <p><strong>Ngày đặt:</strong> <span id="orderDate"></span></p>
-                                    <p><strong>Trạng thái:</strong> <span id="orderStatus" class="badge d-none"></span>
+                                    <p><strong>Trạng thái:</strong> 
+                                        <span id="orderStatus" class="badge me-2"></span>
                                         <select id="orderStatusSelect" class="form-select form-select-sm d-inline-block w-auto ms-2" style="width: auto;">
                                             <option value="Hoàn thành">Hoàn thành</option>
                                             <option value="Đang xử lý">Đang xử lý</option>
@@ -1534,6 +1535,71 @@
             localStorage.removeItem('adminLoggedIn');
             window.location.href = 'admin-login.html';
         }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Xử lý thay đổi trạng thái trong modal
+            const orderStatusSelect = document.getElementById('orderStatusSelect');
+            if (orderStatusSelect) {
+                orderStatusSelect.addEventListener('change', function() {
+                    const selectedStatus = this.value;
+                    const statusBadge = document.getElementById('orderStatus');
+                    
+                    // Cập nhật class cho badge dựa vào trạng thái
+                    statusBadge.className = 'badge me-2';
+                    switch(selectedStatus) {
+                        case 'Hoàn thành':
+                            statusBadge.classList.add('bg-success');
+                            break;
+                        case 'Đang xử lý':
+                            statusBadge.classList.add('bg-warning');
+                            break;
+                        case 'Đang giao':
+                            statusBadge.classList.add('bg-info');
+                            break;
+                        case 'Đã hủy':
+                            statusBadge.classList.add('bg-danger');
+                            break;
+                    }
+                    statusBadge.textContent = selectedStatus;
+                });
+            }
+
+            // Khi mở modal, cập nhật selected option và badge dựa theo trạng thái hiện tại
+            const orderDetailModal = document.getElementById('orderDetailModal');
+            if (orderDetailModal) {
+                orderDetailModal.addEventListener('show.bs.modal', function(event) {
+                    const button = event.relatedTarget;
+                    const row = button.closest('tr');
+                    const statusCell = row.querySelector('td:nth-child(6)');
+                    const currentStatus = statusCell.textContent.trim();
+                    
+                    const statusSelect = document.getElementById('orderStatusSelect');
+                    const statusBadge = document.getElementById('orderStatus');
+                    
+                    statusSelect.value = currentStatus;
+                    statusBadge.className = 'badge me-2';
+                    statusBadge.textContent = currentStatus;
+                    
+                    // Set badge color
+                    switch(currentStatus) {
+                        case 'Hoàn thành':
+                            statusBadge.classList.add('bg-success');
+                            break;
+                        case 'Đang xử lý':
+                            statusBadge.classList.add('bg-warning');
+                            break;
+                        case 'Đang giao':
+                            statusBadge.classList.add('bg-info');
+                            break;
+                        case 'Đã hủy':
+                            statusBadge.classList.add('bg-danger');
+                            break;
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
