@@ -852,7 +852,7 @@
                                 <td>ngothif@email.com</td>
                                 <td>0963852741</td>
                                 <td>Người Dùng</td>
-                                <td><span class="badge bg-success">Hoạt Động</span></td>
+                                <td><span class="badge bg-success">Hoạt ��ộng</span></td>
                                 <td>
                                     <button class="btn btn-sm btn-info btn-action btn-edit-user" title="Sửa">
                                         <i class="fas fa-edit"></i>
@@ -1462,6 +1462,15 @@
                         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
                     </div>
                 </div>
+                <!-- Add new search success toast -->
+                <div id="searchToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            Tìm kiếm thành công!
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                    </div>
+                </div>
             </div>
 
             <script>
@@ -1495,6 +1504,30 @@
                     // Sửa bài viết
                     document.querySelectorAll('.btn-edit-post').forEach(btn => {
                         btn.addEventListener('click', () => editPostModal.show());
+                    });
+                });
+
+                // Add search functionality
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Initialize search toast
+                    const searchToast = new bootstrap.Toast(document.getElementById('searchToast'));
+
+                    // Add click handlers for all search buttons
+                    const searchButtons = document.querySelectorAll('.search-box .btn');
+                    searchButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            searchToast.show();
+                        });
+                    });
+
+                    // Add enter key handler for search inputs
+                    const searchInputs = document.querySelectorAll('.search-box input');
+                    searchInputs.forEach(input => {
+                        input.addEventListener('keypress', function(e) {
+                            if (e.key === 'Enter') {
+                                searchToast.show();
+                            }
+                        });
                     });
                 });
             </script>
