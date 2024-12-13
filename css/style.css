@@ -211,9 +211,9 @@ button.btn-addtocart:before {
 button.btn-addtocart[disabled] {
   opacity: 0.8;
 }
-.button:hover {
+/* .button:hover {
   color: #252a2b !important;
-}
+} */
 .button:hover:before {
   color: #000;
   transform-origin: right center;
