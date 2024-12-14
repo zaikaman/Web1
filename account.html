@@ -13,8 +13,52 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="plugins/uikit/uikit.min.css" />
 
-  <title>Lịch sử đơn hàng - Runner</title>
+  <title>Tài khoản - Runner</title>
 
+  <style>
+    .account-info {
+      padding: 30px 0;
+    }
+    .account-section {
+      background: #fff;
+      padding: 25px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .account-section h3 {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f1f1f1;
+    }
+    .info-item {
+      margin-bottom: 15px;
+    }
+    .info-label {
+      font-weight: bold;
+      color: #666;
+    }
+    .account-links a {
+      display: block;
+      padding: 10px 15px;
+      margin-bottom: 5px;
+      color: #333;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    .account-links a:hover {
+      background: #f8f9fa;
+      color: #000;
+    }
+    .account-links a.active {
+      background: #000;
+      color: #fff;
+    }
+    .account-links i {
+      margin-right: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -67,85 +111,10 @@
           </li>
         </ul>
       </div>
-      <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="background: white; width: 350px;">
-
-          <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
-
-          <h3 style="font-size: 14px;
-                color: #272727;
-                text-transform: uppercase;
-                margin: 3px 0 30px 0;
-                font-weight: 500; letter-spacing: 2px;">Tìm kiếm</h3>
-          <div class="search-box wpo-wrapper-search">
-            <form action="search" class="searchform searchform-categoris ultimate-search">
-              <div class="wpo-search-inner" style="display:flex; align-items:center;">
-                <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
-                  class="searchinput input-search search-input" type="text" size="20"
-                  placeholder="Tìm kiếm sản phẩm...">
-                <a href="search-result.html" id="search-header-btn" style="margin-left:5px; background: transparent; border: none; transition: all 0.3s ease;">
-                  <i class="fas fa-search" style="font-size: 18px; color: #272727; padding: 8px; border-radius: 50%;"></i>
-                </a>
-              </div>
-            </form>
-            <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults" style="display: none">
-              <div class="resultsContent"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="offcanvas-flip2" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="background: white;
-            width: 350px;">
-
-          <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
-
-          <h3 style="font-size: 14px;
-                color: #272727;
-                text-transform: uppercase;
-                margin: 3px 0 30px 0;
-                font-weight: 500; letter-spacing: 2px;">Giỏ hàng</h3>
-          <div class="site-nav-container-last" style="color:#272727">
-            <div class="cart-view clearfix">
-              <table id="cart-view">
-                <tbody>
-                  <tr class="item_1">
-                    <td class="img"><a href="./product-detail/Nike/1.html" title="Nike Air Max 90"><img
-                          src="images/shoes/1.jpg" alt="Nike Air Max 90"></a></td>
-                    <td>
-                      <a class="pro-title-view" style="color: #272727" href="./product-detail/Nike/1.html"
-                        title="Nike Air Max 90">Nike Air Max 90</a>
-                      <span class="variant">Đen / 42</span>
-                      <span class="pro-quantity-view">1</span>
-                      <span class="pro-price-view">3,600,000₫</span>
-                      <span class="remove_link remove-cart"><a href=""><i style="color: #272727;"
-                            class="fas fa-times"></i></a></span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="table-total">
-                <tbody>
-                  <tr>
-                    <td class="text-left">TỔNG TIỀN:</td>
-                    <td class="text-right" id="total-view-cart">3,600,000₫</td>
-                  </tr>
-                  <tr>
-                    <td class="distance-td" style="padding-right: 10px;"><a href="cart.html" class="linktocart button dark">Xem giỏ hàng</a></td>
-                    <td><a href="checkout.html" class="linktocheckout button dark">Thanh toán</a></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="icon-ol">
         <a href="#" uk-toggle="target: #offcanvas-flip">
           <i class="fas fa-search" style="color: black"></i>
         </a>
-
         <div class="user-dropdown">
           <a style="color: #272727" href="#">
             <i class="fas fa-user-alt"></i>
@@ -155,95 +124,94 @@
             <a href="index.html">Đăng xuất</a>
           </div>
         </div>
-        
         <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
           <i class="fas fa-shopping-cart"></i>
         </a>
-        <button class="navbar-toggler" type="button" uk-toggle="target: #offcanvas-flip1" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
       </div>
-    </div>
     </div>
   </nav>
 
   <!--Content-->
   <div class="content">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="order-history-header">
-            <h2 class="text-center" style="margin: 40px 0;">LỊCH SỬ ĐƠN HÀNG</h2>
-          </div>
-          <div class="order-history-content">
-            <div class="table-responsive">
-              <table class="table table-bordered table-hover">
-                <thead class="thead-dark">
-                  <tr>
-                    <th>Mã đơn hàng</th>
-                    <th>Ngày đặt</th>
-                    <th>Sản phẩm</th>
-                    <th>Tổng tiền</th>
-                    <th>Trạng thái</th>
-                    <th>Chi tiết</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>#ORD001</td>
-                    <td>15/12/2023</td>
-                    <td>Nike Air Max 90 Essential 'Grape'</td>
-                    <td>2.900.000₫</td>
-                    <td><span class="badge badge-success">Đã giao hàng</span></td>
-                    <td><a href="#" class="btn btn-sm btn-info">Xem chi tiết</a></td>
-                  </tr>
-                  <tr>
-                    <td>#ORD002</td>
-                    <td>10/12/2023</td>
-                    <td>Adidas EQT Cushion ADV</td>
-                    <td>3.200.000₫</td>
-                    <td><span class="badge badge-warning">Đang giao</span></td>
-                    <td><a href="#" class="btn btn-sm btn-info">Xem chi tiết</a></td>
-                  </tr>
-                  <tr>
-                    <td>#ORD003</td>
-                    <td>05/12/2023</td>
-                    <td>Nike Air Max 97 Premium</td>
-                    <td>4.500.000₫</td>
-                    <td><span class="badge badge-success">Đã giao hàng</span></td>
-                    <td><a href="#" class="btn btn-sm btn-info">Xem chi tiết</a></td>
-                  </tr>
-                </tbody>
-              </table>
+      <div class="row account-info">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+          <div class="account-section">
+            <div class="account-links">
+              <a href="account.html" class="active">
+                <i class="fas fa-user"></i> Thông tin tài khoản
+              </a>
+              <a href="orderhistory.html">
+                <i class="fas fa-shopping-bag"></i> Lịch sử đơn hàng
+              </a>
+              <a href="javascript:void(0)" onclick="alert('Đăng xuất thành công!');window.location.href='index.html'">
+                <i class="fas fa-sign-out-alt"></i> Đăng xuất
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Pagination -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <nav aria-label="Page navigation" class="d-flex justify-content-center" style="margin: 20px 0;">
-          <ul class="pagination">
-            <li class="page-item">
-              <!-- <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a> -->
-            </li>
-            <li class="page-item active"><a class="page-link" href="orderhistory.html">1</a></li>
-            <li class="page-item"><a class="page-link" href="orderhistory2.html">2</a></li>
-            <li class="page-item"><a class="page-link" href="orderhistory3.html">3</a></li>
-            <li class="page-item">
-              <!-- <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a> -->
-            </li>
-          </ul>
-        </nav>
+        <!-- Main Content -->
+        <div class="col-md-9">
+          <div class="account-section">
+            <h3>Thông tin tài khoản</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Họ và tên:</div>
+                  <div>Nguyễn Văn A</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">Email:</div>
+                  <div>nguyenvana@email.com</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">Số điện thoại:</div>
+                  <div>0123456789</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Ngày sinh:</div>
+                  <div>01/01/1990</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">Giới tính:</div>
+                  <div>Nam</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">Địa chỉ:</div>
+                  <div>123 Đường ABC, Quận 1, TP.HCM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="account-section">
+            <h3>Thống kê mua hàng</h3>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="info-item">
+                  <div class="info-label">Tổng đơn hàng:</div>
+                  <div>15 đơn</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="info-item">
+                  <div class="info-label">Đơn hàng thành công:</div>
+                  <div>12 đơn</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="info-item">
+                  <div class="info-label">Đơn hàng đang xử lý:</div>
+                  <div>3 đơn</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
