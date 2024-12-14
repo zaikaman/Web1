@@ -97,6 +97,9 @@
             <a href="#settings" class="nav-link" data-section="settings">
                 <i class="fas fa-cog"></i> Cài Đặt
             </a>
+            <a href="#statistics" class="nav-link" data-section="statistics">
+                <i class="fas fa-chart-bar"></i> Thống Kê
+            </a>
             <hr class="my-2" style="border-color: rgba(255,255,255,0.1);">
             <a href="#" class="nav-link" onclick="logout()">
                 <i class="fas fa-sign-out-alt"></i> Đăng Xuất
@@ -242,7 +245,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div>  
 
                 <!-- Orders Table -->
                 <div class="table-container">
@@ -559,13 +562,28 @@
             <div id="orders" class="content-section">
                 <div class="table-container">
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h4>Quản Lý Đơn Hàng</h4>
-                        <div class="search-box">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="order-search" placeholder="Tìm kiếm đơn hàng...">
-                                <button class="btn btn-primary">
-                                    <i class="fas fa-search"></i>
-                                </button>
+                        <h4 class="mb-0">Quản Lý Đơn Hàng</h4>
+                        <div class="d-flex">
+                            <div class="filter-box me-4">
+                                <select class="form-select" id="order-filter" onchange="searchOrders()">
+                                    <option value="">Tất cả trạng thái</option>
+                                    <option value="Hoàn Thành">Hoàn Thành</option>
+                                    <option value="Đang Xử Lý">Đang Xử Lý</option>
+                                    <option value="Đang Giao">Đang Giao</option>
+                                    <option value="Đã Hủy">Đã Hủy</option>
+                                </select>
+                            </div>
+                            <div class="date-filter-box d-flex align-items-center" style="margin-right:10px;">
+                                <label for="order-date-filter" style="width: 200px;" class="me-1">Lọc theo ngày:</label>
+                                <input type="date" class="form-control" id="order-date-filter" onchange="searchOrders()">
+                            </div>
+                            <div class="search-box me-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="order-search" placeholder="Tìm kiếm đơn hàng...">
+                                    <button class="btn btn-primary" onclick="searchOrders()">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1311,6 +1329,12 @@
                                             <option value="1">Còn Hàng</option>
                                             <option value="0">Hết Hàng</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Size</label>
+                                        <input type="text" class="form-control" placeholder="Nhập size sản phẩm">
                                     </div>
                                 </div>
                                 <div class="mb-3">
