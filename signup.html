@@ -118,7 +118,7 @@
         </div>
       </div>
       <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar" style="    background: white;
+        <div class="uk-offcanvas-bar" style="background: white;
             width: 350px;">
 
           <button class="uk-offcanvas-close" style="color:#272727" type="button" uk-close></button>
@@ -132,7 +132,7 @@
             <form action="search" class="searchform searchform-categoris ultimate-search">
               <div class="wpo-search-inner" style="display:inline">
                 <input type="hidden" name="type" value="product">
-                <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
+                <input id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
                   class="searchinput input-search search-input" type="text" size="20"
                   placeholder="Tìm kiếm sản phẩm...">
               </div>
@@ -260,10 +260,10 @@
             <div class="signin-right">
                 <form onsubmit="return handleSignup(event)">
                     <div class="firstname form-control1">
-                        <input type="text" id="firstname" placeholder="Họ" required>
+                        <input type="text" id="firstname" placeholder="Họ">
                     </div>
                     <div class="lastname form-control1">
-                        <input type="text" id="lastname" placeholder="Tên" required>
+                        <input type="text" id="lastname" placeholder="Tên">
                     </div>
                     <div class="sex form-control1">
                         <div class="female">
@@ -276,16 +276,16 @@
                         </div>
                     </div>
                     <div class="birthday form-control1">
-                        <input type="text" id="birthday" placeholder="mm/dd/yyyy" required>
+                        <input type="text" id="birthday" placeholder="mm/dd/yyyy">
                     </div>
                     <div class="email form-control1">
-                        <input type="email" id="signup-email" placeholder="Email" required>
+                        <input type="text" id="signup-email" placeholder="Email">
                     </div>
                     <div class="password form-control1">
-                        <input type="password" id="signup-password" placeholder="Password" required>
+                        <input type="text" id="signup-password" placeholder="Password">
                     </div>
                     <div class="password form-control1">
-                        <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu" required>
+                        <input type="text" id="confirm-password" placeholder="Nhập lại mật khẩu">
                     </div>
                     <div id="error-message" style="color: red; display: none; margin: 10px 0;"></div>
                     <div class="submit">
@@ -422,11 +422,9 @@
                       <div class="fb-page" data-href="https://www.facebook.com/AziWorld-Viet-Nam-908555669481794/"
                         data-tabs="timeline" data-width="" data-height="215" data-small-header="false"
                         data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                        <blockquote cite="https://www.facebook.com/AziWorld-Viet-Nam-908555669481794/"
-                          class="fb-xfbml-parse-ignore"><a
+                        <blockquote cite="https://www.facebook.com/AziWorld-Viet-Nam-908555669481794/" class="fb-xfbml-parse-ignore"><a
                             href="https://www.facebook.com/AziWorld-Viet-Nam-908555669481794/">AziWorld Viet Nam</a>
-                        </blockquote>
-                      </div>
+                      </blockquote>
                     </div>
                   </div>
                 </div>
@@ -439,7 +437,7 @@
         <div class="container">
           <hr>
           <div class="main-footer--border" style="text-align:center;padding-bottom: 15px;">
-            <p>Copyright © 2019 <a href="https://runner-inn.myharavan.com"> Runner Inn</a>. <a target="_blank"
+            <p>Copyright 2019 <a href="https://runner-inn.myharavan.com"> Runner Inn</a>. <a target="_blank"
                 href="https://www.facebook.com/henrynguyen202">Powered by HuniBlue</a></p>
           </div>
         </div>
@@ -463,60 +461,7 @@
   function handleSignup(event) {
       event.preventDefault();
       
-      const firstname = document.getElementById('firstname').value;
-      const lastname = document.getElementById('lastname').value;
-      const email = document.getElementById('signup-email').value;
-      const password = document.getElementById('signup-password').value;
-      const confirmPassword = document.getElementById('confirm-password').value;
-      const birthday = document.getElementById('birthday').value;
-      const errorMessage = document.getElementById('error-message');
-      
-      // Validate first name
-      if (firstname.trim().length < 2) {
-          errorMessage.textContent = "Họ phải có ít nhất 2 ký tự!";
-          errorMessage.style.display = 'block';
-          return false;
-      }
-      
-      // Validate last name
-      if (lastname.trim().length < 2) {
-          errorMessage.textContent = "Tên phải có ít nhất 2 ký tự!";
-          errorMessage.style.display = 'block';
-          return false;
-      }
-      
-      // Validate email format
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-          errorMessage.textContent = "Email không hợp lệ!";
-          errorMessage.style.display = 'block';
-          return false;
-      }
-      
-      // Validate password length and complexity
-      if (password.length < 6) {
-          errorMessage.textContent = "Mật khẩu phải có ít nhất 6 ký tự!";
-          errorMessage.style.display = 'block';
-          return false;
-      }
-      
-      // Validate password confirmation
-      if (password !== confirmPassword) {
-          errorMessage.textContent = "Mật khẩu xác nhận không khớp!";
-          errorMessage.style.display = 'block';
-          return false;
-      }
-      
-      // Validate birthday (must be in the past)
-      const birthdayDate = new Date(birthday);
-      const today = new Date();
-      if (birthdayDate >= today) {
-          errorMessage.textContent = "Ngày sinh không hợp lệ!";
-          errorMessage.style.display = 'block';
-          return false;
-      }
-      
-      // If all validations pass, show success and redirect
+      // Show success message and redirect
       alert('Đăng ký thành công!');
       window.location.href = 'signin.html';
       
