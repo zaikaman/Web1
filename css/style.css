@@ -763,8 +763,8 @@ h3.post_title {
     padding: 5px !important;
     overflow: hidden;
   }
-}
 
+}
 /*Footer Bottom */
 .main-footer a {
   color: #272727;
@@ -2181,6 +2181,45 @@ ul.article-info-more li i {
 /*-------------------------------------------*/
 .product-detail-wrapper {
   padding: 30px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.product-gallery {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.product-gallery::-webkit-scrollbar {
+  width: 6px;
+}
+
+.product-gallery::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+.product-gallery:hover {
+  overflow-y: auto;
+}
+
+.product-info-main {
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh - 100px);
+  padding-right: 15px;
+}
+
+.product-info-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.product-info-main::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
 }
 .product-detail-main {
   margin-bottom: 40px;
@@ -3290,12 +3329,12 @@ div.item:hover {
 }
 
 .add-to-cart {
-  background-color: #305DFF;
+  background: #305DFF;
   color: white;
 }
 
 .buy-now {
-  background-color: #FF3945;
+  background: #FF3945;
   color: white;
 }
 
@@ -3399,6 +3438,7 @@ div.item:hover {
   background: #000;
   color: white;
   border: none;
+  border-radius: 4px;
 }
 
 .mua-ngay-btn {
@@ -3406,6 +3446,7 @@ div.item:hover {
   background: #ff0000;
   color: white;
   border: none;
+  border-radius: 4px;
 }
 
 .discount-btn {
@@ -3414,6 +3455,7 @@ div.item:hover {
   background: #4267b2;
   color: white;
   border: none;
+  border-radius: 4px;
   margin: 20px 0;
 }
 
