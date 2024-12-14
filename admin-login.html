@@ -58,7 +58,7 @@
             <div class="error-message" id="errorMessage">
                 Tài khoản hoặc mật khẩu không đúng!
             </div>
-            <a href="admincp.html" type="submit" class="btn btn-primary w-100 mt-3">Đăng Nhập</a>
+            <button type="submit" class="btn btn-primary w-100 mt-3">Đăng Nhập</button>
         </form>
     </div>
 
@@ -66,18 +66,11 @@
         function validateLogin(event) {
             event.preventDefault();
             
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('errorMessage');
-            
-            if (username === 'admin' && password === '123') {
-                // Lưu trạng thái đăng nhập
-                localStorage.setItem('adminLoggedIn', 'true');
-                // Chuyển hướng đến trang admin
-                window.location.href = 'admincp.html';
-            } else {
-                errorMessage.style.display = 'block';
-            }
+            // Không cần kiểm tra dữ liệu username và password
+            // Lưu trạng thái đăng nhập
+            localStorage.setItem('adminLoggedIn', 'true');
+            // Chuyển hướng đến trang admin
+            window.location.href = 'admincp.html';
             
             return false;
         }
