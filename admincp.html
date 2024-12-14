@@ -1175,7 +1175,7 @@
                                     <div class="d-flex">
                                         <input type="date" class="form-control me-2" id="filter-date-start" style="width: 45%;">
                                         <input type="date" class="form-control ms-2" id="filter-date-end" style="width: 45%;">
-                                        <button type="button" class="btn btn-primary ms-4" style="width: 250px;">Tìm kiếm</button>
+                                        <button style="width: 250px;" type="button" class="btn btn-primary ms-4" onclick="generateRandomStats()">Tìm kiếm</button>
                                     </div>
                                 </div>
                             </div>
@@ -1185,7 +1185,7 @@
                                 <div class="card stat-card">
                                     <div class="card-body">
                                         <h5>Tổng Sản Phẩm</h5>
-                                        <h2>124</h2>
+                                        <h2 id="total-products">124</h2>
                                     </div>
                                 </div>
                             </div>
@@ -1193,7 +1193,7 @@
                                 <div class="card stat-card">
                                     <div class="card-body">
                                         <h5>Tổng Đơn Hàng</h5>
-                                        <h2>56</h2>
+                                        <h2 id="total-orders">56</h2>
                                     </div>
                                 </div>
                             </div>
@@ -1201,7 +1201,7 @@
                                 <div class="card stat-card">
                                     <div class="card-body">
                                         <h5>Tổng Người Dùng</h5>
-                                        <h2>789</h2>
+                                        <h2 id="total-users">789</h2>
                                     </div>
                                 </div>
                             </div>
@@ -1209,7 +1209,7 @@
                                 <div class="card stat-card">
                                     <div class="card-body">
                                         <h5>Tổng Doanh Thu</h5>
-                                        <h2>12.456.000đ</h2>
+                                        <h2 id="total-revenue">12.456.000đ</h2>
                                     </div>
                                 </div>
                             </div>
@@ -1235,6 +1235,48 @@
                     </div>
                 </div>
             </div>
+
+            <script>
+                function generateRandomStats() {
+                    // Simulate fetching data from an API or database
+                    const startDate = document.getElementById('filter-date-start').value;
+                    const endDate = document.getElementById('filter-date-end').value;
+                    // Assuming we have a function to fetch data based on the date range
+                    fetchStats(startDate, endDate).then(data => {
+                        // Update the statistics with the fetched data
+                        document.getElementById('total-products').innerText = data.totalProducts;
+                        document.getElementById('total-orders').innerText = data.totalOrders;
+                        document.getElementById('total-users').innerText = data.totalUsers;
+                        document.getElementById('total-revenue').innerText = data.totalRevenue + 'đ';
+                        // Assuming we have a function to update the charts
+                        updateCharts(data);
+                    });
+                }
+
+                // Function to simulate fetching data
+                function fetchStats(startDate, endDate) {
+                    // Simulate a delay to mimic an API call
+                    return new Promise(resolve => {
+                        setTimeout(() => {
+                            // Simulate the fetched data
+                            const data = {
+                                totalProducts: Math.floor(Math.random() * 1000),
+                                totalOrders: Math.floor(Math.random() * 1000),
+                                totalUsers: Math.floor(Math.random() * 1000),
+                                totalRevenue: Math.floor(Math.random() * 10000000)
+                            };
+                            resolve(data);
+                        }, 1000); // Simulate a delay of 1 second
+                    });
+                }
+
+                // Function to update the charts
+                function updateCharts(data) {
+                    // Assuming we have a function to update the charts with the fetched data
+                    // This is a placeholder for the actual chart update logic
+                    console.log('Updating charts with data:', data);
+                }
+            </script>
 
             <!-- Modal Sửa Sản Phẩm -->
             <div class="modal fade" id="editProductModal" tabindex="-1">
